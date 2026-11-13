@@ -13,3 +13,15 @@ ffmpeg -i out/marian-ep10.mp4 -c:v copy -af loudnorm=I=-14:TP=-1.5 -c:a aac out/
 
 Episodio nuevo: generar la voz (voz «Nicole», modelo eleven_v4), guardar el texto en `textos/`,
 `python3 scripts/align.py public/audio/epXX.mp3 textos/epXX.txt src/data/epXX.json`, copiar un `EpXX.tsx` y cambiar las escenas.
+
+## Flujo de trabajo (desde el 13-nov-2026)
+
+Ya no se generan voces con ElevenLabs desde aquí (sin créditos). Para cada video:
+
+1. Claude entrega el **guion** (texto exacto a leer, con las pausas marcadas).
+2. El dueño de Citora graba o genera el **audio** y lo pasa (mp3, m4a o wav; un archivo por video).
+3. Claude lo guarda en `public/audio/`, sincroniza los subtítulos con `scripts/align.py`,
+   monta las escenas, renderiza y normaliza a -14 LUFS.
+
+Si la grabación cambia alguna palabra respecto al guion, hay que avisar o actualizar `textos/epXX.txt`,
+porque los subtítulos salen de ese texto.
