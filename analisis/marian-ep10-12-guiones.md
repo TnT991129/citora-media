@@ -1,68 +1,66 @@
-# Marian · guiones de los episodios 10, 11 y 12
+# Marian · episodios 10, 11 y 12 (versión producida)
 
-Siguen el ep. 9 ("Llevaba tres meses…"): Marian ve que **Yamila, la peluquera nueva**, recibe reservas sin escribir con nadie, con su app. Arco de los tres episodios: **la envidia → la prueba → la primera vez que le sirve de verdad.**
+Siguen el ep. 9, en el que Marian reserva con **Yamila, la peluquera nueva**, desde su app y entiende que sus clientas le escriben «porque no les da otra opción».
+Arco: **Marian se hace su app → la lista de espera le salva un sábado → la competencia se vuelve su clienta.**
 
-Formato: ~80 s, ~200 palabras, voz seca, sin música. Subtítulo de 2-4 palabras arriba con la palabra clave en naranja. Plano cada 1-2 s.
-**[corchetes] = lo que se ve.** Frase final fija: *"En fin. La acetona, abierta, como siempre."*
-
----
-
-## Ep. 10 · «La app de Yamila»
-
-**Pie de foto:** Yamila tiene una app. Yo tengo una libreta con un crucigrama dentro.
-**Primer comentario fijado:** Con Citora tus clientas reservan solas desde tu enlace. Escríbeme al DM y te lo paso. 3 días gratis.
-
-| Tiempo | Voz | Imagen |
-|---|---|---|
-| 0-3 s | **Yamila lleva un mes en el barrio. Y ya tiene más clientas que yo.** | [Primer plano de Marian, seria. Corte: Yamila sonriendo con un cartel encima: "1 mes". Al lado de Marian: "3 años".] |
-| 3-10 | Y no es que corte mejor. Corta normal. Lo que tiene es una app. | [Plano general: los dos salones uno frente al otro. El de Yamila con un cartelito "Reserva aquí 📲". El de Marian, con la libreta en la puerta.] |
-| 10-20 | Así que le pregunto a mi prima que cómo se reserva con Yamila. Y me dice: «Fácil. Elegí la hora y ya». ¿Y ya? ¿Sin «mi amor, ¿tienes turno?»? Sin nada. | [Chat de WhatsApp de la prima: "Fácil. Elegí la hora y ya 🙂". Marian lee con la cara de siempre.] |
-| 20-35 | Yo para dar un turno necesito siete mensajes, dos audios y una llamada perdida. | [Contador que va subiendo: "💬 1… 2… 7", "🎤 audio 3:12", "📞 llamada perdida". Al fondo, los cuatro gatos-clienta mirando.] |
-| 35-50 | Esa noche me pongo a mirar la app de Yamila. Por investigar. Veo los precios. Veo las horas libres. Veo que el jueves a las dos lo tiene libre. Y sin querer… reservo. | [Primer plano del móvil: la web "Salón Yamila", días L-M-X-**J**-V, horas. El dedo de Marian toca 14:00 → "✓ Reservado". Silencio.] |
-| 50-60 | Tengo un turno con mi competencia. Para cortarme el pelo. Que ni lo necesito. | [Primer plano de Marian, ojos muy abiertos. Cartel rojo grande: **«RESERVADO»**.] |
-| 60-72 | Y lo peor no es eso. Lo peor es que en un minuto me llega: «Hola, Marian, te espero el jueves 💛». Me reconoció por el número. | [Notificación en el móvil de Marian. Marian se tapa la cara con la mano de las uñas recién hechas.] |
-| 72-80 | Ahora el jueves voy a tener que ir. Con gafas oscuras. A espiar. **En fin. La acetona, abierta, como siempre.** | [Marian con gafas de sol (el gato con gafas en una esquina). Primer plano final serio. Sello de Citora.] |
+Voz: la misma de los episodios anteriores en ElevenLabs (Nicole, eleven_v4), tono seco.
+Cierre fijo de la serie: **«En fin… menos mensajes, más uñas, mija.»** + sello de Citora.
+Videos: `marian-remotion/out/marian-ep10.mp4`, `-ep11.mp4`, `-ep12.mp4` (1080×1920, ~65-80 s).
 
 ---
 
-## Ep. 11 · «El jueves a las dos»
+## Ep. 10 · «Cinco minutos» (~79 s)
 
-**Pie de foto:** Fui a espiar. Salí con flequillo.
-**Primer comentario fijado:** Tus clientas ven tus servicios, tus precios y tus horas libres antes de reservar. Escríbeme al DM y te paso el enlace.
+**Gancho (0-3 s):** «Hice una app. Yo. Que no sé ni bajarle el brillo al teléfono.»
 
-| Tiempo | Voz | Imagen |
-|---|---|---|
-| 0-3 s | **Ayer fui a espiar a Yamila. Y salí con flequillo.** | [Primer plano: Marian seria, con flequillo recto nuevo.] |
-| 3-12 | Llegué a las dos menos diez. Puntual. Yo, que llego tarde a mi propio salón. | [Reloj "13:50". Marian en la puerta del salón de Yamila con las gafas oscuras.] |
-| 12-25 | Y ahí está la cosa: nadie esperando. En mi salón a las dos hay tres sentadas, una que «ya está cerca» y una que vino sin turno «a ver si me coges». | [Pantalla dividida. Izquierda, salón de Yamila: una silla, una clienta. Derecha, el de Marian: sillas llenas, la tardona con su "ya estoy cerca 📍".] |
-| 25-40 | Yamila tiene la agenda en el teléfono. Cada clienta, su hora. Una se fue y otra entró. Como en el banco, pero sin el banco. | [Primer plano del panel de Yamila: "Hoy · 14:00 Marian · 15:00 Daylin · 16:30 Yuli". Las citas se van marcando ✓.] |
-| 40-55 | Y entonces le escribe una: «no puedo ir, se me fue la guagua». Y Yamila no se pone brava. Toca un botón y le avisa a otra que estaba en lista de espera. A los dos minutos, hueco lleno. | [Chat "se me fue la guagua 🚌". Botón "Avisar" → WhatsApp con el mensaje ya escrito: "Se liberó un hueco a las 4:30, ¿lo quieres?". Respuesta: "¡¡Sí!!".] |
-| 55-65 | Yo cuando una me falla, el hueco se queda ahí. Mirándome. Como la mesa de quince mil. | [Plano del salón de Marian: una silla vacía con foco de luz, de broma triste. Al lado, la mesa "de uñas".] |
-| 65-73 | Mientras tanto Yamila me iba cortando. Yo no le dije nada. Ella tampoco. Y salí así. | [Tijera, mechones cayendo. Marian con flequillo.] |
-| 73-80 | Y antes de irme le pregunté cómo se llamaba la app. Por el flequillo, nada más. **En fin. La acetona, abierta, como siempre.** | [Cartelito de la app en la pared del salón. Primer plano final serio. Sello de Citora.] |
+**Voz:**
+Hice una app. Yo. Que no sé ni bajarle el brillo al teléfono. Desde lo de Yamila no dormía. Bueno, nunca duermo… pero ahora era por otra cosa. Así que me puse un domingo. Con el ventilador, y la corriente que, milagro, no se iba. Me dijeron: cinco minutos. Lo único que tardé fue en escoger el rosado. Había cuarenta. Los servicios ya venían puestos. Manicura. Pedicura. Acrílico. Solo cambié los precios. Para arriba. Y puse uno nuevo: «sencillito con gato». Cinco mil. Mandé el enlace al grupo de las clientas. A las once de la noche. Y me fui a dormir. Sin el teléfono al lado. Primera vez en tres años. Por la mañana… tres citas. Con día, hora y servicio. Nadie me escribió «¿estás?». Nadie me mandó un audio. Una hasta pagó el depósito. Antes. Y la tardona reservó a las nueve. A las nueve menos cinco me escribe: «ya estoy cerca». Hay cosas que no las arregla ninguna app. Ahora tengo tiempo. Y no sé qué hacer con él. Me pinté las uñas. Dos veces. En fin… menos mensajes, más uñas, mija.
 
----
+**Funciones que salen:** crear la app en 5 minutos, 40 colores, servicios ya puestos, precios, enlace para el grupo, agenda del día, depósito.
 
-## Ep. 12 · «Cinco minutos»
+**Pie de foto:**
+> La hice en cinco minutos. Lo que más tardé fue escoger el rosado 💅
 
-**Pie de foto:** La hice en cinco minutos. Llevo tres días mirándola.
-**Primer comentario fijado:** Crea la app de reservas de tu salón en 5 minutos, con tu nombre y tu color. 3 días gratis. Escríbeme al DM.
-
-| Tiempo | Voz | Imagen |
-|---|---|---|
-| 0-3 s | **Hice una app. Yo. Que no sé ni bajarle el brillo al teléfono.** | [Primer plano de Marian con el móvil al máximo de brillo, iluminándole la cara.] |
-| 3-15 | Me puse un domingo, con el ventilador y la corriente que no se iba. Me dijeron cinco minutos. Lo único que tardé fue en escoger el rosado. | [Pantalla del creador de Citora: "Elige tu color" → la paleta de 40 tonos, todos rosados para Marian. El dedo duda.] |
-| 15-30 | Los servicios ya venían puestos. Manicura, pedicura, acrílico. Solo cambié los precios. Para arriba. | [Lista: "Manicura 1.500 → 1.800", "Acrílico 3.500 → 4.000". Al final, uno nuevo: "Sencillito con gato: 5.000".] |
-| 30-45 | Y mandé el enlace al grupo de clientas. A las once de la noche. Y me fui a dormir. Sin el teléfono al lado. Primera vez en tres años. | [Chat "Clientas Marian 💅" con el enlace. Plano de Marian en la cama, el teléfono boca abajo en la mesita.] |
-| 45-60 | Por la mañana, tres citas. Hora, día y servicio. Nadie me escribió «¿estás?». Nadie me mandó audio. Una hasta pagó el depósito. | [Panel "Hoy": tres citas. Ningún mensaje. Marian mira el móvil, lo pone boca abajo, lo vuelve a mirar.] |
-| 60-72 | Y la tardona… reservó a las nueve. Y a las nueve menos cinco me llega: «ya estoy cerca». Hay cosas que no arregla ninguna app. | [Notificación de la tardona: "ya estoy cerca 📍". Primer plano de Marian, mismo gesto de siempre.] |
-| 72-80 | Ahora lo que tengo es tiempo. No sé qué hacer con él. Me volví a pintar las uñas. Dos veces. **En fin. La acetona, abierta, como siempre.** | [Marian con las uñas de dos colores. Primer plano final serio. Sello de Citora.] |
+**Primer comentario (fijarlo):**
+> Con Citora haces la app de reservas de tu salón en 5 minutos, con tu nombre y tu color. Tus clientas reservan solas desde tu enlace. Escríbeme al DM y te ayudo. Prueba gratis 🎁
 
 ---
 
-### Por qué funcionan
-- **Ganchos de contradicción** en el segundo 0, como los 6 mejores de @triple.estresso.
-- **Escalada con cifras exactas**: 7 mensajes, 2 audios, 1 llamada perdida, 15 mil, 13:50, 3 citas.
-- **Giro contra la protagonista**: acaba reservando con su competencia, sale con flequillo, la tardona sigue siendo la tardona.
-- **Citora no se anuncia, se vive.** Cada función aparece porque la historia la necesita: reservar con horas libres (ep. 10), agenda del día y lista de espera (ep. 11), crear la app en 5 minutos y el depósito (ep. 12).
-- **Personajes que vuelven**: Yamila, la prima, la tardona, los gatos-clienta, la mesa de 15.000, el gato con gafas.
+## Ep. 11 · «Se me fue la guagua» (~77 s)
+
+**Gancho:** «El sábado una clienta me canceló. Y fue lo mejor que me pasó en la semana.»
+
+**Voz:**
+El sábado una clienta me canceló. Y fue lo mejor que me pasó en la semana. Antes, cuando una me fallaba, el hueco se quedaba ahí. Mirándome. Como la mesa de quince mil. Y yo escribiéndole a todo el mundo: «Mi amor, ¿tú no querías el sábado?». Siete mensajes. Dos audios. Y una que me contestaba el lunes. Pero ahora tengo la app. Y la app tiene una cosa que se llama lista de espera. Cuando el sábado se llena, las que no cogieron se apuntan. Había tres. Así que el sábado a las diez me escribe Daylin: «Marian, no puedo ir. Se me fue la guagua». A las diez de la mañana. La guagua. Que pasa una vez al día. Yo no me puse brava. Toqué «Avisar». Y se me abrió el WhatsApp con el mensaje ya escrito: «Se liberó un hueco a las once. ¿Lo quieres?». A los dos minutos: «¡Sí! ¡Voy!». Ahora estoy enganchada. Miro la lista de espera como quien mira la bolita. Casi quiero que me cancelen. ¿Y sabes quién cogió el hueco de las once? Daylin. Que cogió otra guagua. En fin… menos mensajes, más uñas, mija.
+
+**Funciones:** lista de espera, botón «Avisar» con el WhatsApp ya escrito.
+
+**Pie de foto:**
+> Se le fue la guagua a las 10 de la mañana. La guagua que pasa una vez al día 🚌
+
+**Primer comentario:**
+> Con la lista de espera de Citora, si alguien cancela, tocas «Avisar» y WhatsApp se abre con el mensaje ya escrito. Tu sábado vuelve a estar lleno. Escríbeme al DM 📩
+
+---
+
+## Ep. 12 · «Clienta de Yamila» (~66 s)
+
+**Gancho:** «Ayer me reservó Yamila. La de la app. Por mi app.»
+
+**Voz:**
+Ayer me reservó Yamila. La de la app. Por mi app. Me llegó el aviso: «Yamila. Acrílico. Jueves, dos de la tarde». La competencia. En mi silla. Me pasé la noche limpiando el salón. Hasta le pasé un trapo a la mesa de quince mil. Llegó a las dos menos diez. Puntual. Yo no sabía que eso existía. Se sentó, sacó el teléfono y me enseñó la foto. Pinterest. Piedras. Encapsulado. Y un gato con gafas. Yo ya me estaba preparando para el «¿tan caro?». Para la mano en el pecho. Para el «hazme lo mismo, pero más baratico». Y me dice: «Cinco mil, ¿no? Lo vi en tu app». Y me pagó. Sin regatear. Con el gato y todo. Y antes de irse me dejó una opinión. Cinco estrellas. «Marian es la mejor. Y no hay que escribirle». La leí catorce veces. La quince fue en voz alta. En fin… menos mensajes, más uñas, mija.
+
+**Funciones:** aviso de nueva cita, precios visibles antes de reservar (se acabó el regateo), cobro, opiniones con estrellas.
+**Guiños a episodios anteriores:** la mesa de 15.000 (ep. 1), el gato con gafas y el «más baratico» (ep. 5), Yamila (ep. 9).
+
+**Pie de foto:**
+> La competencia en mi silla. Puntual. Y sin regatear 😐
+
+**Primer comentario:**
+> Con Citora tus clientas ven tus servicios y precios antes de reservar, y te dejan su opinión después. Escríbeme al DM y te paso el enlace 💅
+
+---
+
+### Publicación
+- Un episodio cada 2 días, como @triple.estresso, para que el que vio uno espere el siguiente.
+- Probar a no hacer preguntas en el pie de foto en estos tres y comparar los comentarios con los episodios 1-9.
