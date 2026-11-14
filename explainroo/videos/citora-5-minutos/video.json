@@ -1,0 +1,25 @@
+{
+  "title": "Tu app de reservas en 5 minutos",
+  "theme": "midnight",
+  "size": "reels",
+  "voice": "ef_dora",
+  "pace": 1.15,
+  "music": {
+    "volume": 0.35
+  },
+  "captions": "bold",
+  "transition": "push",
+  "cover": "hook@0.6",
+  "defaults": "0.6",
+  "language": "es",
+  "watermark": false,
+  "targetSeconds": 45,
+  "brand": {
+    "accent": "#f0532e"
+  },
+  "heard": {
+    "ahora": [
+      "a zora"
+    ]
+  }
+}
