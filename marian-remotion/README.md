@@ -25,3 +25,8 @@ Ya no se generan voces con ElevenLabs desde aquí (sin créditos). Para cada vid
 
 Si la grabación cambia alguna palabra respecto al guion, hay que avisar o actualizar `textos/epXX.txt`,
 porque los subtítulos salen de ese texto.
+
+## Final de los episodios (desde el ep. 13)
+Los episodios nuevos usan `outro="walk"` en `<Episode>`: desde «En fin» Marian sale de cuerpo entero,
+dice la frase, se va caminando por la derecha y luego aparece el sello. Los ep. 10-12 usan el final antiguo (`"stamp"`).
+En `Root.tsx`, la duración se calcula con `dur(data, "walk")`. Ejemplo: composición `Prueba-final-nuevo`.

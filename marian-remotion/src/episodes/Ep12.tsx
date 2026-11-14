@@ -69,3 +69,6 @@ const scenes: Scene[] = [
 ];
 
 export const Ep12: React.FC = () => <Episode data={data as EpData} audio="audio/ep12a.mp3" scenes={scenes} />;
+
+/** Solo para enseñar el final nuevo (Marian se va caminando). No es el episodio publicado. */
+export const Ep12PruebaFinal: React.FC = () => <Episode data={data as EpData} audio="audio/ep12a.mp3" scenes={scenes} outro="walk" />;

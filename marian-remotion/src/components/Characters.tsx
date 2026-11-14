@@ -96,17 +96,28 @@ const ArmsSvg: React.FC<{ arms: Arms; skin?: string }> = ({ arms }) => {
   );
 };
 
-const Body: React.FC<{ dress: string; arms: Arms; badge?: boolean }> = ({ dress, arms, badge = true }) => (
-  <>
-    <path d="M130 470 L128 612" stroke={STROKE} strokeWidth={9} strokeLinecap="round" />
-    <path d="M170 470 L172 612" stroke={STROKE} strokeWidth={9} strokeLinecap="round" />
-    <ellipse cx={122} cy={614} rx={15} ry={8} fill={STROKE} />
-    <ellipse cx={178} cy={614} rx={15} ry={8} fill={STROKE} />
-    <path d="M104 300 L196 300 L216 476 L84 476 Z" fill={dress} stroke={STROKE} strokeWidth={6} strokeLinejoin="round" />
-    {badge && <rect x={135} y={408} width={32} height={27} rx={4} fill={C.pinkDark} stroke={STROKE} strokeWidth={4} />}
-    <ArmsSvg arms={arms} />
-  </>
-);
+const Body: React.FC<{ dress: string; arms: Arms; badge?: boolean; step?: number }> = ({ dress, arms, badge = true, step }) => {
+  // step: fase de la caminata (undefined = quieta)
+  const sw = step === undefined ? 0 : Math.sin(step) * 30;
+  return (
+    <>
+      <path d={`M130 470 L${128 + sw} 612`} stroke={STROKE} strokeWidth={9} strokeLinecap="round" />
+      <path d={`M170 470 L${172 - sw} 612`} stroke={STROKE} strokeWidth={9} strokeLinecap="round" />
+      <ellipse cx={122 + sw * 1.1} cy={614} rx={15} ry={8} fill={STROKE} />
+      <ellipse cx={178 - sw * 1.1} cy={614} rx={15} ry={8} fill={STROKE} />
+      <path d="M104 300 L196 300 L216 476 L84 476 Z" fill={dress} stroke={STROKE} strokeWidth={6} strokeLinejoin="round" />
+      {badge && <rect x={135} y={408} width={32} height={27} rx={4} fill={C.pinkDark} stroke={STROKE} strokeWidth={4} />}
+      {step === undefined ? (
+        <ArmsSvg arms={arms} />
+      ) : (
+        <>
+          <path d={`M104 320 L${96 - sw * 0.8} 440`} stroke={STROKE} strokeWidth={9} strokeLinecap="round" />
+          <path d={`M196 320 L${204 + sw * 0.8} 440`} stroke={STROKE} strokeWidth={9} strokeLinecap="round" />
+        </>
+      )}
+    </>
+  );
+};
 
 /** Marian: manicurista, moño, bata rosada, cara de "ya nada me sorprende". */
 export const Marian: React.FC<{
@@ -117,13 +128,14 @@ export const Marian: React.FC<{
   glasses?: boolean;
   bangs?: boolean;
   glow?: boolean;
-}> = ({ eyes = "flat", arms = "phone", speaking = true, size = 760, glasses, bangs, glow }) => {
+  step?: number;
+}> = ({ eyes = "flat", arms = "phone", speaking = true, size = 760, glasses, bangs, glow, step }) => {
   const ctx = React.useContext(EpCtx);
   const blink = useBlink(1);
   return (
     <svg viewBox="0 0 300 640" width={(size * 300) / 640} height={size} style={{ overflow: "visible" }}>
       {glow && <ellipse cx={150} cy={250} rx={170} ry={210} fill="#FFF3B0" opacity={0.55} />}
-      <Body dress={C.pink} arms={arms} />
+      <Body dress={C.pink} arms={arms} step={step} />
       {/* moño */}
       <circle cx={150} cy={92} r={36} fill={C.hair} stroke={STROKE} strokeWidth={5} />
       <path d="M158 58 q10 -14 2 -24" stroke={STROKE} strokeWidth={4} fill="none" strokeLinecap="round" />
