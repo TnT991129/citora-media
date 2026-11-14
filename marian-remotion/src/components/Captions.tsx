@@ -49,6 +49,7 @@ export const Captions: React.FC<{ data: EpData; dark?: boolean }> = ({ data, dar
         fontSize: 66,
         lineHeight: 1.15,
         letterSpacing: -0.5,
+        textShadow: dark ? undefined : "0 0 10px #F6F1E8, 0 0 18px #F6F1E8, 0 0 4px #F6F1E8",
       }}
     >
       {dark ? (

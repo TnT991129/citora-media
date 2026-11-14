@@ -8,9 +8,10 @@ import { C } from "../theme";
 import { Captions } from "./Captions";
 import { EpCtx } from "./Characters";
 import { CitoraStamp, Ground } from "./Bits";
+import { SetBg, SetName, Shadow } from "./Sets";
 
 export type Cam = { z?: number; x?: number; y?: number; drift?: number };
-export type Scene = { at: string; dark?: boolean; cam?: Cam; ground?: boolean; el: React.ReactNode };
+export type Scene = { at: string; dark?: boolean; cam?: Cam; ground?: boolean; set?: SetName; el: React.ReactNode };
 
 export const END_HOLD = 2.6; // segundos de sello al final
 export const WALK = 2.0; // segundos en que Marian se va caminando (final "walk")
@@ -23,7 +24,7 @@ const stampTime = (data: EpData, outro: Outro) => data.words[data.words.length -
 export const epDuration = (data: EpData, outro: Outro = "stamp") => stampTime(data, outro) + END_HOLD;
 
 /** Final nuevo: Marian de cuerpo entero dice la frase, se gira y se va por la derecha. */
-const WalkOff: React.FC<{ from: number }> = ({ from }) => {
+const WalkOff: React.FC<{ from: number; set?: SetName }> = ({ from, set = "plain" }) => {
   const f = useCurrentFrame();
   const { fps } = useVideoConfig();
   const local = f - from; // frames desde que empieza a caminar
@@ -32,7 +33,9 @@ const WalkOff: React.FC<{ from: number }> = ({ from }) => {
   const bob = walking ? Math.abs(Math.sin(local * 0.45)) * -14 : 0;
   return (
     <AbsoluteFill>
-      <Ground />
+      <SetBg set={set} />
+      {set === "plain" && <Ground />}
+      <Shadow x={x} />
       <div style={{ position: "absolute", left: x, top: GROUND + bob, translate: "-50% -100%", rotate: walking ? "3deg" : "0deg" }}>
         <Marian eyes={walking ? "side" : "flat"} arms={walking ? "down" : "phone"} step={walking ? local * 0.45 : undefined} />
       </div>
@@ -56,7 +59,7 @@ const Camera: React.FC<{ cam?: Cam; len: number; children: React.ReactNode }> = 
   );
 };
 
-export const Episode: React.FC<{ data: EpData; audio: string; scenes: Scene[]; outro?: Outro }> = ({ data, audio, scenes, outro = "stamp" }) => {
+export const Episode: React.FC<{ data: EpData; audio: string; scenes: Scene[]; outro?: Outro; outroSet?: SetName }> = ({ data, audio, scenes, outro = "stamp", outroSet = "plain" }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const t = frame / fps;
@@ -87,7 +90,8 @@ export const Episode: React.FC<{ data: EpData; audio: string; scenes: Scene[]; o
             <Sequence key={i} from={from} durationInFrames={Math.max(1, to - from)} layout="none">
               <AbsoluteFill style={{ background: s.dark ? C.night : C.bg }}>
                 <Camera cam={s.cam} len={to - from}>
-                  {s.ground !== false && <Ground dark={s.dark} />}
+                  {s.set && <SetBg set={s.set} />}
+                  {!s.set && s.ground !== false && <Ground dark={s.dark} />}
                   {s.el}
                 </Camera>
               </AbsoluteFill>
@@ -97,7 +101,7 @@ export const Episode: React.FC<{ data: EpData; audio: string; scenes: Scene[]; o
         {outro === "walk" && (
           <Sequence from={outroAt} durationInFrames={stampAt - outroAt} layout="none">
             <AbsoluteFill style={{ background: C.bg }}>
-              <WalkOff from={walkAt - outroAt} />
+              <WalkOff from={walkAt - outroAt} set={outroSet} />
             </AbsoluteFill>
           </Sequence>
         )}

@@ -3,21 +3,28 @@ import { Abs } from "../components/Bits";
 import { Marian, Person } from "../components/Characters";
 import { C, GROUND } from "../theme";
 import { Cam } from "../components/Episode";
+import { Shadow } from "../components/Sets";
 
 type MP = React.ComponentProps<typeof Marian>;
 type PP = React.ComponentProps<typeof Person>;
 
 /** Marian de cuerpo entero sobre el suelo. */
 export const M: React.FC<MP & { x?: number }> = ({ x = 540, ...p }) => (
-  <Abs x={x} y={GROUND} anchor="bottom">
-    <Marian {...p} />
-  </Abs>
+  <>
+    <Shadow x={x} w={((p.size ?? 760) / 760) * 230} />
+    <Abs x={x} y={GROUND} anchor="bottom">
+      <Marian {...p} />
+    </Abs>
+  </>
 );
 
 export const P: React.FC<PP & { x?: number }> = ({ x = 760, ...p }) => (
-  <Abs x={x} y={GROUND} anchor="bottom">
-    <Person {...p} />
-  </Abs>
+  <>
+    <Shadow x={x} w={((p.size ?? 560) / 760) * 230} />
+    <Abs x={x} y={GROUND} anchor="bottom">
+      <Person {...p} />
+    </Abs>
+  </>
 );
 
 export const Yamila: React.FC<Omit<PP, "hair" | "dress" | "style" | "scissors"> & { x?: number }> = (p) => (
