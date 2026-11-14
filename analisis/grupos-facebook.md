@@ -1,8 +1,8 @@
 # Captar dueñas de salones en grupos de Facebook de Cuba
 
 Objetivo: que dueñas y dueños de salones (uñas, pelo, barbería, cejas y pestañas) creen su app en Citora.
-Rellena antes de publicar: **[PRECIO]** (en el código, 1.500 CUP/mes) y **[DÍAS]** de prueba gratis (en el código, 3; en
-publicaciones anteriores se dijo 15). Mira la cifra real en tu panel de administrador → Ajustes.
+Prueba gratis: **7 días** (cambiado el 14-nov-2026; antes eran 15). Rellena **[PRECIO]** con la mensualidad real
+(en el código viene 1.500 CUP/mes; mira tu panel de administrador → Ajustes).
 
 ## 1. Encontrar los grupos (15 minutos)
 
@@ -60,7 +60,7 @@ En WhatsApp y Telegram hay grupos y canales de emprendedoras cubanas y de venta 
 > ✅ Si alguien cancela, la lista de espera te dice a quién avisar
 > ✅ Tus clientas no instalan nada ni se crean cuenta
 >
-> **[DÍAS] días gratis** con todo. Después, **[PRECIO] CUP al mes**.
+> **7 días gratis** con todo. Después, **[PRECIO] CUP al mes**.
 > El pago es directo conmigo; la app no cobra nada a tus clientas.
 >
 > Escríbeme **MARIAN** por privado y te la dejo lista hoy 💅
@@ -82,7 +82,7 @@ En WhatsApp y Telegram hay grupos y canales de emprendedoras cubanas y de venta 
 > 2. Qué servicios haces y a qué precio
 > 3. Qué días y a qué horas trabajas
 > 4. Tu WhatsApp
-> Con eso te la dejo lista y te mando tu enlace para que lo compartas con tus clientas. Tienes [DÍAS] días gratis para probarla 🙌
+> Con eso te la dejo lista y te mando tu enlace para que lo compartas con tus clientas. Tienes 7 días gratis para probarla 🙌
 
 ## 4. Qué medir
 - Mensajes privados que llegan después de cada publicación.
