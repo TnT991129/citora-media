@@ -4,6 +4,8 @@ import { Ep10 } from "./episodes/Ep10";
 import { Ep11 } from "./episodes/Ep11";
 import { Ep12, Ep12PruebaFinal } from "./episodes/Ep12";
 import { Ep13 } from "./episodes/Ep13";
+import { Ep14 } from "./episodes/Ep14";
+import ep14 from "./data/ep14.json";
 import ep13 from "./data/ep13.json";
 import ep10 from "./data/ep10.json";
 import ep11 from "./data/ep11.json";
@@ -21,6 +23,7 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="Marian-ep11" component={Ep11} durationInFrames={dur(ep11)} {...common} />
     <Composition id="Marian-ep12" component={Ep12} durationInFrames={dur(ep12)} {...common} />
     <Composition id="Marian-ep13" component={Ep13} durationInFrames={dur(ep13, "walk")} {...common} />
+    <Composition id="Marian-ep14" component={Ep14} durationInFrames={dur(ep14, "walk")} {...common} />
     <Composition id="Prueba-final-nuevo" component={Ep12PruebaFinal} durationInFrames={dur(ep12, "walk")} {...common} />
   </>
 );
