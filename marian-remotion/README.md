@@ -34,3 +34,9 @@ En `Root.tsx`, la duración se calcula con `dur(data, "walk")`. Ejemplo: composi
 ## Regla de contenido
 Citora **no procesa pagos**. Nunca mostrar «Pago recibido» o «Depósito recibido» como aviso de la app.
 Los pagos en los videos van en efectivo (componente `Cash`) o fuera de la app.
+
+## Subtítulos con faster-whisper (desde el ep. 13)
+`python3 -I scripts/align_whisper.py public/audio/epXX.mp3 textos/epXX.txt src/data/epXX.json`
+Escucha el audio, encuentra cada palabra del guion y guarda su tiempo exacto. Necesita
+`pip install faster-whisper "av>=14,<16"` y acceso a huggingface.co la primera vez (modelo «small», ~480 MB).
+`scripts/align.py` (por silencios) queda como plan B.
