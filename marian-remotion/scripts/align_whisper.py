@@ -17,7 +17,7 @@ def norm(w):
     return re.sub(r"[^a-z0-9ñ]", "", "".join(c for c in w if unicodedata.category(c) != "Mn"))
 
 model = WhisperModel("small", device="cpu", compute_type="int8")
-segs, _ = model.transcribe(audio, language="es", word_timestamps=True, initial_prompt=" ".join(words[:60]))
+segs, _ = model.transcribe(audio, language="es", word_timestamps=True, vad_filter=True, vad_parameters={"min_silence_duration_ms": 250})
 heard = [w for s in segs for w in s.words]
 
 # Empareja las palabras del guion con las oídas; las que no casan se interpolan.
