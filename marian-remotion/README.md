@@ -30,3 +30,7 @@ porque los subtítulos salen de ese texto.
 Los episodios nuevos usan `outro="walk"` en `<Episode>`: desde «En fin» Marian sale de cuerpo entero,
 dice la frase, se va caminando por la derecha y luego aparece el sello. Los ep. 10-12 usan el final antiguo (`"stamp"`).
 En `Root.tsx`, la duración se calcula con `dur(data, "walk")`. Ejemplo: composición `Prueba-final-nuevo`.
+
+## Regla de contenido
+Citora **no procesa pagos**. Nunca mostrar «Pago recibido» o «Depósito recibido» como aviso de la app.
+Los pagos en los videos van en efectivo (componente `Cash`) o fuera de la app.

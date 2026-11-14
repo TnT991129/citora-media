@@ -1,7 +1,7 @@
 import React from "react";
 import { useCurrentFrame } from "remotion";
 import data from "../data/ep12.json";
-import { Abs, BigStamp, Bubble, Chair, Clock, Nail, Notif, Phone, Pill, Pop, Table } from "../components/Bits";
+import { Abs, BigStamp, Bubble, Cash, Chair, Clock, Nail, Notif, Phone, Pill, Pop, Table } from "../components/Bits";
 import { Episode, Scene } from "../components/Episode";
 import { EpData } from "../lib/words";
 import { C, FONT } from "../theme";
@@ -57,7 +57,7 @@ const scenes: Scene[] = [
   { at: "Para la mano", el: (<><M x={330} /><Abs x={790} y={1520}><div style={{ rotate: "-80deg", opacity: 0.45 }}><Person hair="#E7B04A" dress={C.lilac} style="long" eyes="closed" smile={false} size={420} /></div></Abs><Pop delay={20} style={{ left: 640, top: 760, opacity: 0.6 }}><Bubble text="más baratico 🙏" size={34} /></Pop></>) },
   { at: "Y me dice", cam: { z: 1.5, y: 1200 }, el: <Yamila x={540} eyes="flat" smile={false} speaking={false} /> },
   { at: "Cinco mil no", el: (<><Yamila x={600} smile /><Pop delay={2} style={{ left: 480, top: 760 }}><Bubble text="Cinco mil, ¿no? Lo vi en tu app 📲" size={36} width={620} tail="right" /></Pop></>) },
-  { at: "Y me pagó", el: <Abs x={540} y={900}><Notif title="Pago recibido ✓" text="Yamila · 5.000 CUP" /></Abs> },
+  { at: "Y me pagó", el: (<><Yamila x={760} arms="wave" /><Pop delay={4} style={{ left: 360, top: 980 }}><Cash amount="5.000 CUP · en efectivo" w={380} /></Pop></>) },
   { at: "Sin regatear", cam: CLOSE, el: (<><M eyes="wide" /><Pop delay={4} style={{ left: 540, top: 1380 }}><BigStamp text="sin regatear" /></Pop></>) },
   { at: "Con el gato", el: (<><Abs x={330} y={1100}><Nail stones encap cat w={250} /></Abs><Yamila x={800} /></>) },
   { at: "Y antes de irse", el: <Abs x={540} y={1130}><Review /></Abs> },

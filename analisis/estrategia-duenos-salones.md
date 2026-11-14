@@ -1,5 +1,10 @@
 # Cómo atraer dueñas y dueños de salones en Cuba con Marian
 
+## Lo que Citora hace y NO hace (para no prometer de más)
+- **Hace:** reservas desde el enlace, horas libres, servicios y precios visibles, agenda, recordatorios y avisos por WhatsApp, lista de espera, clientes, opiniones, estadísticas.
+- **NO cobra.** Desde la app no se paga nada. En Cuba los pagos van por fuera (efectivo o transferencia) y la transferencia es complicada.
+  En los videos, cualquier pago o depósito se ve **en efectivo o entre la clienta y Marian**, nunca como «pago recibido» en la app.
+
 ## La idea
 Quien compra Citora es **la dueña del salón, la que contesta el WhatsApp**: manicuristas, peluqueras, lashistas, barberos.
 Marian **es** esa persona. Si los videos hablan de su vida (clientas, precios, apagones, transferencias, materiales),

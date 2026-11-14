@@ -326,3 +326,17 @@ export const CitoraStamp: React.FC = () => {
     </div>
   );
 };
+
+/** Billetes en efectivo (la app NO cobra: los pagos van por fuera, en efectivo o transferencia). */
+export const Cash: React.FC<{ amount: string; w?: number }> = ({ amount, w = 420 }) => (
+  <div style={{ position: "relative", width: w, height: w * 0.62 }}>
+    {[-10, 4, 16].map((r, i) => (
+      <div key={i} style={{ position: "absolute", inset: 0, rotate: `${r}deg`, background: "#BFE3B4", border: `6px solid ${C.ink}`, borderRadius: 18, display: "grid", placeItems: "center" }}>
+        <div style={{ width: w * 0.32, height: w * 0.32, borderRadius: "50%", border: `5px solid ${C.ink}`, opacity: 0.35 }} />
+      </div>
+    ))}
+    <div style={{ position: "absolute", bottom: -40, left: "50%", translate: "-50% 0" }}>
+      <Pill icon="💵" text={amount} color={C.green} size={38} />
+    </div>
+  </div>
+);

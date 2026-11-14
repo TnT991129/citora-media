@@ -1,12 +1,12 @@
 import React from "react";
 import { interpolate, useCurrentFrame } from "remotion";
 import data from "../data/ep10.json";
-import { Abs, BigStamp, Bulb, Chat, Clock, Fan, Nail, Notif, Phone, Pill, Pop, Row } from "../components/Bits";
+import { Abs, BigStamp, Bulb, Cash, Chat, Clock, Fan, Nail, Notif, Phone, Pill, Pop, Row } from "../components/Bits";
 import { Cat } from "../components/Characters";
 import { Episode, Scene } from "../components/Episode";
 import { EpData } from "../lib/words";
 import { C, FONT } from "../theme";
-import { CLOSE, HEAD, M, Tardona, XHEAD, Yamila } from "./common";
+import { CLOSE, HEAD, M, P, Tardona, XHEAD, Yamila } from "./common";
 
 const Swatches: React.FC<{ n?: number }> = ({ n = 40 }) => {
   const f = useCurrentFrame();
@@ -60,7 +60,7 @@ const scenes: Scene[] = [
   { at: "Primera vez en", dark: true, el: (<><Abs x={540} y={1300}><Bed /></Abs><Abs x={540} y={950}><BigStamp text="primera vez en 3 años" size={74} /></Abs></>), ground: false },
   { at: "Por la mañana", el: (<Abs x={540} y={1130}><Phone title="Hoy · lunes" color={C.orange}><Pop delay={8} style={{ position: "relative" }}><Row left="9:00 · Manicura" right="✓" /></Pop><Pop delay={14} style={{ position: "relative" }}><Row left="11:30 · Acrílico" right="✓" /></Pop><Pop delay={20} style={{ position: "relative" }}><Row left="3:00 · Pedicura" right="✓" /></Pop></Phone></Abs>) },
   { at: "Nadie me escribió", el: (<><M eyes="side" /><Abs x={180} y={900}><Cat /></Abs><Abs x={900} y={900}><Cat color="#F5A742" /></Abs><Abs x={180} y={1300}><Cat color="#BDBDBD" /></Abs><Abs x={900} y={1300}><Cat color="#333" /></Abs><Pop delay={10} style={{ left: 540, top: 680 }}><Pill icon="💬" text="0 mensajes" /></Pop></>) },
-  { at: "Una hasta pagó", el: (<><Abs x={540} y={720}><Notif title="Depósito recibido ✓" text="Katy · 500 CUP · Acrílico" /></Abs><M x={540} size={560} /></>) },
+  { at: "Una hasta pagó", el: (<><M x={330} eyes="wide" /><P x={790} hair="#C0392B" dress="#F5C26B" style="long" arms="wave" /><Pop delay={6} style={{ left: 560, top: 620 }}><Cash amount="500 CUP · en efectivo" w={300} /></Pop></>) },
   { at: "Antes", cam: XHEAD, el: <M eyes="wide" /> },
   { at: "Y la tardona", el: (<><M x={330} /><Tardona x={800} /><Pop delay={6} style={{ left: 800, top: 900 }}><Clock time="9:00" /></Pop></>) },
   { at: "A las nueve menos", el: (<><Abs x={540} y={720}><Notif app="WhatsApp" title="La tardona" text="ya estoy cerca 📍" time="8:55" /></Abs><M size={560} eyes="flat" /></>) },

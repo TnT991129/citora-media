@@ -16,7 +16,7 @@ Videos: `marian-remotion/out/marian-ep10.mp4`, `-ep11.mp4`, `-ep12.mp4` (1080×1
 **Voz:**
 Hice una app. Yo. Que no sé ni bajarle el brillo al teléfono. Desde lo de Yamila no dormía. Bueno, nunca duermo… pero ahora era por otra cosa. Así que me puse un domingo. Con el ventilador, y la corriente que, milagro, no se iba. Me dijeron: cinco minutos. Lo único que tardé fue en escoger el rosado. Había cuarenta. Los servicios ya venían puestos. Manicura. Pedicura. Acrílico. Solo cambié los precios. Para arriba. Y puse uno nuevo: «sencillito con gato». Cinco mil. Mandé el enlace al grupo de las clientas. A las once de la noche. Y me fui a dormir. Sin el teléfono al lado. Primera vez en tres años. Por la mañana… tres citas. Con día, hora y servicio. Nadie me escribió «¿estás?». Nadie me mandó un audio. Una hasta pagó el depósito. Antes. Y la tardona reservó a las nueve. A las nueve menos cinco me escribe: «ya estoy cerca». Hay cosas que no las arregla ninguna app. Ahora tengo tiempo. Y no sé qué hacer con él. Me pinté las uñas. Dos veces. En fin… menos mensajes, más uñas, mija.
 
-**Funciones que salen:** crear la app en 5 minutos, 40 colores, servicios ya puestos, precios, enlace para el grupo, agenda del día, depósito.
+**Funciones que salen:** crear la app en 5 minutos, 40 colores, servicios ya puestos, precios, enlace para el grupo, agenda del día. (El depósito se ve pagado **en efectivo**: la app no cobra.)
 
 **Pie de foto:**
 > La hice en cinco minutos. Lo que más tardé fue escoger el rosado 💅
@@ -50,7 +50,7 @@ El sábado una clienta me canceló. Y fue lo mejor que me pasó en la semana. An
 **Voz:**
 Ayer me reservó Yamila. La de la app. Por mi app. Me llegó el aviso: «Yamila. Acrílico. Jueves, dos de la tarde». La competencia. En mi silla. Me pasé la noche limpiando el salón. Hasta le pasé un trapo a la mesa de quince mil. Llegó a las dos menos diez. Puntual. Yo no sabía que eso existía. Se sentó, sacó el teléfono y me enseñó la foto. Pinterest. Piedras. Encapsulado. Y un gato con gafas. Yo ya me estaba preparando para el «¿tan caro?». Para la mano en el pecho. Para el «hazme lo mismo, pero más baratico». Y me dice: «Cinco mil, ¿no? Lo vi en tu app». Y me pagó. Sin regatear. Con el gato y todo. Y antes de irse me dejó una opinión. Cinco estrellas. «Marian es la mejor. Y no hay que escribirle». La leí catorce veces. La quince fue en voz alta. En fin… menos mensajes, más uñas, mija.
 
-**Funciones:** aviso de nueva cita, precios visibles antes de reservar (se acabó el regateo), cobro, opiniones con estrellas.
+**Funciones:** aviso de nueva cita, precios visibles antes de reservar (se acabó el regateo), opiniones con estrellas. (Yamila paga **en efectivo**: la app no cobra.)
 **Guiños a episodios anteriores:** la mesa de 15.000 (ep. 1), el gato con gafas y el «más baratico» (ep. 5), Yamila (ep. 9).
 
 **Pie de foto:**
