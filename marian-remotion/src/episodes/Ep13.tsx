@@ -173,4 +173,4 @@ const scenes: Scene[] = [
   { at: "En fin", el: <M /> },
 ];
 
-export const Ep13: React.FC = () => <Episode data={data as EpData} audio="audio/ep13a.mp3" scenes={scenes} outro="walk" />;
+export const Ep13: React.FC = () => <Episode data={data as EpData} audio="audio/ep13b.mp3" scenes={scenes} outro="walk" />;
