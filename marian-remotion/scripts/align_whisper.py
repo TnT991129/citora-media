@@ -40,6 +40,9 @@ for i, t in enumerate(times):
     j = gap.index(i)
     times[i] = (s0 + j * step, s0 + (j + 1) * step)
 
+# Una palabra no dura más de 1 s: si whisper la alarga por una pausa delante, se adelanta su inicio.
+times = [(max(t[0], t[1] - 1.0), t[1]) for t in times]
+
 dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", audio],
                            capture_output=True, text=True).stdout)
 data = {
