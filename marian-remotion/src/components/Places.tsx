@@ -94,8 +94,8 @@ export const KitBag: React.FC = () => (
 );
 
 /** Frasco (esmalte o acetona). `empty` lo deja vacío. */
-export const Bottle: React.FC<{ label: string; color?: string; empty?: boolean; sand?: boolean }> = ({ label, color = C.pink, empty, sand }) => (
-  <svg viewBox="0 0 200 320" width={240} height={384}>
+export const Bottle: React.FC<{ label: string; color?: string; empty?: boolean; sand?: boolean; w?: number }> = ({ label, color = C.pink, empty, sand, w = 240 }) => (
+  <svg viewBox="0 0 200 320" width={w} height={w * 1.6}>
     <rect x={70} y={10} width={60} height={70} rx={8} fill={C.ink} />
     <rect x={30} y={80} width={140} height={220} rx={26} fill="#fff" stroke={C.ink} strokeWidth={7} />
     {!empty && <rect x={37} y={sand ? 220 : 140} width={126} height={sand ? 73 : 153} rx={20} fill={sand ? "#E9C77F" : color} />}
