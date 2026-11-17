@@ -7,7 +7,7 @@ import { C, FONT, GROUND } from "../theme";
 // Mismo trazo que Marian: líneas negras gruesas y colores planos, pero apagados para que
 // los personajes destaquen.
 
-export type SetName = "plain" | "salon" | "street" | "beach" | "sunset" | "night" | "home" | "fiesta";
+export type SetName = "plain" | "salon" | "street" | "beach" | "sunset" | "night" | "home" | "fiesta" | "parque";
 
 const INK = C.ink;
 const W = 1080;
@@ -283,6 +283,46 @@ const Fiesta: React.FC = () => {
   );
 };
 
+/** Parque de noche con zona wifi: árboles, farola con luz, cartel ZONA WIFI y banco. */
+const Parque: React.FC = () => {
+  const f = useCurrentFrame();
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} width={W} height={H} style={{ position: "absolute", inset: 0 }}>
+      <rect width={W} height={GROUND} fill="#1B2240" />
+      {Array.from({ length: 24 }).map((_, i) => (
+        <circle key={i} cx={(i * 397) % W} cy={150 + ((i * 131) % 380)} r={(i % 3) + 1.5} fill="#fff" opacity={0.35 + ((f + i * 7) % 40) / 90} />
+      ))}
+      <circle cx={880} cy={380} r={56} fill="#F5F0D0" />
+      {/* árboles */}
+      {[[120, 1.1], [960, 1]].map(([x, k], i) => (
+        <g key={i} transform={`translate(${x} ${GROUND}) scale(${k})`}>
+          <rect x={-22} y={-420} width={44} height={420} fill="#4A3426" stroke={INK} strokeWidth={6} />
+          <circle cx={0} cy={-520} r={150} fill="#2F5D3A" stroke={INK} strokeWidth={6} />
+          <circle cx={-110} cy={-430} r={90} fill="#2F5D3A" stroke={INK} strokeWidth={6} />
+          <circle cx={110} cy={-440} r={95} fill="#2F5D3A" stroke={INK} strokeWidth={6} />
+        </g>
+      ))}
+      {/* farola */}
+      <g transform={`translate(560 ${GROUND})`}>
+        <ellipse cx={0} cy={-10} rx={260} ry={40} fill="#FFF1B0" opacity={0.18} />
+        <path d="M0 0 L0 -700" stroke="#2E2E2E" strokeWidth={18} />
+        <path d="M0 -700 Q0 -760 60 -760" stroke="#2E2E2E" strokeWidth={14} fill="none" />
+        <circle cx={70} cy={-740} r={30} fill="#FFE98A" />
+        <circle cx={70} cy={-740} r={90} fill="#FFE98A" opacity={0.15} />
+      </g>
+      {/* cartel ZONA WIFI */}
+      <g transform="translate(300 760)">
+        <path d="M60 120 L60 420" stroke="#2E2E2E" strokeWidth={12} />
+        <rect x={-50} y={0} width={220} height={130} rx={16} fill="#3E7CC9" stroke={INK} strokeWidth={6} />
+        <text x={60} y={58} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={34} fill="#fff">ZONA</text>
+        <text x={60} y={104} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={40} fill="#fff">WIFI 📶</text>
+      </g>
+      <rect x={0} y={GROUND} width={W} height={H - GROUND} fill="#2A3A2E" />
+      <path d={`M0 ${GROUND} L${W} ${GROUND}`} stroke={INK} strokeWidth={5} />
+    </svg>
+  );
+};
+
 /** Apagón en casa: casi negro, con la luna por la ventana. */
 const NightHome: React.FC = () => (
   <svg viewBox={`0 0 ${W} ${H}`} width={W} height={H} style={{ position: "absolute", inset: 0 }}>
@@ -305,6 +345,7 @@ export const SetBg: React.FC<{ set: SetName }> = ({ set }) => {
   if (set === "night") return <NightHome />;
   if (set === "beach") return <Beach />;
   if (set === "fiesta") return <Fiesta />;
+  if (set === "parque") return <Parque />;
   if (set === "sunset") return <Beach sunset />;
   return null;
 };

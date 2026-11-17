@@ -10,6 +10,8 @@ import { Grupos1 } from "./episodes/Grupos1";
 import { Quince15 } from "./episodes/Quince";
 import { Pipa } from "./episodes/Pipa";
 import { Miami } from "./episodes/Miami";
+import { Datos } from "./episodes/Datos";
+import datos from "./data/datos.json";
 import miami from "./data/miami.json";
 import pipa from "./data/pipa.json";
 import quince from "./data/quince.json";
@@ -37,6 +39,7 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="Marian-los-quince" component={Quince15} durationInFrames={dur(quince, "walk")} {...common} />
     <Composition id="Marian-la-pipa" component={Pipa} durationInFrames={dur(pipa, "walk")} {...common} />
     <Composition id="Marian-paquete-miami" component={Miami} durationInFrames={dur(miami, "walk")} {...common} />
+    <Composition id="Marian-los-datos" component={Datos} durationInFrames={dur(datos, "walk")} {...common} />
     <Composition id="Galeria" component={Galeria} durationInFrames={6} {...common} />
     <Composition id="Prueba-final-nuevo" component={Ep12PruebaFinal} durationInFrames={dur(ep12, "walk")} {...common} />
   </>
