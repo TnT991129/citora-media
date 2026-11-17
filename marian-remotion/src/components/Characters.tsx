@@ -6,7 +6,7 @@ import { C } from "../theme";
 export const EpCtx = React.createContext({ t: 0, talking: false, frame: 0 });
 
 export type Eyes = "flat" | "wide" | "closed" | "side" | "happy";
-export type Arms = "phone" | "down" | "shrug" | "wave" | "cloth";
+export type Arms = "phone" | "down" | "shrug" | "wave" | "cloth" | "up";
 
 const STROKE = C.ink;
 
@@ -78,6 +78,13 @@ const ArmsSvg: React.FC<{ arms: Arms; skin?: string }> = ({ arms }) => {
       <>
         <path d="M104 320 L96 440" {...s} />
         <path d="M196 320 L250 270 L262 200" {...s} />
+      </>
+    );
+  if (arms === "up")
+    return (
+      <>
+        <path d="M104 320 L60 250 L56 170" {...s} />
+        <path d="M196 320 L240 250 L244 170" {...s} />
       </>
     );
   if (arms === "cloth")
@@ -329,6 +336,11 @@ export const Person: React.FC<{
         <>
           <path d={`M${104 - k} 320 L${96 - k} 440`} {...s} />
           <path d={`M${196 + k} 320 L250 270 L262 200`} {...s} />
+        </>
+      ) : arms === "up" ? (
+        <>
+          <path d={`M${104 - k} 320 L60 250 L56 170`} {...s} />
+          <path d={`M${196 + k} 320 L240 250 L244 170`} {...s} />
         </>
       ) : arms === "shrug" ? (
         <>
