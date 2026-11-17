@@ -7,7 +7,7 @@ import { C, FONT, GROUND } from "../theme";
 // Mismo trazo que Marian: líneas negras gruesas y colores planos, pero apagados para que
 // los personajes destaquen.
 
-export type SetName = "plain" | "salon" | "street" | "beach" | "sunset" | "night" | "home";
+export type SetName = "plain" | "salon" | "street" | "beach" | "sunset" | "night" | "home" | "fiesta";
 
 const INK = C.ink;
 const W = 1080;
@@ -246,6 +246,43 @@ const Beach: React.FC<{ sunset?: boolean }> = ({ sunset }) => {
   );
 };
 
+/** Salón de fiestas de unos quince: guirnalda de luces, globos, cartel «MIS 15» y cortina brillante. */
+const Fiesta: React.FC = () => {
+  const f = useCurrentFrame();
+  const balloons: [number, number, string][] = [[90, 760, "#F2A7BE"], [170, 700, "#FFD43B"], [930, 740, "#9B7FD4"], [1010, 690, "#F2A7BE"], [860, 680, "#7FC8C0"]];
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} width={W} height={H} style={{ position: "absolute", inset: 0 }}>
+      <rect width={W} height={GROUND} fill="#3B2E5A" />
+      {Array.from({ length: 30 }).map((_, i) => (
+        <rect key={i} x={i * 38} y={480} width={6} height={GROUND - 480} fill="#C9B6F2" opacity={0.18 + ((i * 7 + Math.floor(f / 6)) % 5) * 0.04} />
+      ))}
+      <path d={`M0 470 Q270 560 540 470 T${W} 470`} stroke={INK} strokeWidth={4} fill="none" />
+      {Array.from({ length: 16 }).map((_, i) => {
+        const x = i * 70 + 10;
+        const y = 470 + Math.sin((x / W) * Math.PI * 2) * -45 + 40;
+        const on = (i + Math.floor(f / 8)) % 3 !== 0;
+        return <circle key={i} cx={x} cy={y} r={11} fill={on ? ["#FFD43B", "#F2A7BE", "#7FC8C0"][i % 3] : "#555"} stroke={INK} strokeWidth={3} />;
+      })}
+      <g transform="translate(540 640)">
+        <rect x={-230} y={-60} width={460} height={120} rx={18} fill="#fff" stroke={INK} strokeWidth={6} />
+        <text x={0} y={22} textAnchor="middle" fontFamily={FONT} fontWeight={900} fontSize={70} fill={C.pinkDark}>MIS 15 ✨</text>
+      </g>
+      {balloons.map(([x, y, c], i) => (
+        <g key={i} transform={`translate(${x} ${y + Math.sin(f / 14 + i) * 10})`}>
+          <path d="M0 60 Q-10 120 5 200" stroke={INK} strokeWidth={3} fill="none" />
+          <ellipse cx={0} cy={0} rx={46} ry={58} fill={c} stroke={INK} strokeWidth={5} />
+          <ellipse cx={-14} cy={-20} rx={10} ry={16} fill="#fff" opacity={0.5} />
+        </g>
+      ))}
+      <rect x={0} y={GROUND} width={W} height={H - GROUND} fill="#2A2140" />
+      {Array.from({ length: 9 }).map((_, i) => (
+        <ellipse key={i} cx={i * 130 + 60} cy={GROUND + 120 + (i % 2) * 90} rx={50} ry={10} fill="#F2A7BE" opacity={0.15} />
+      ))}
+      <path d={`M0 ${GROUND} L${W} ${GROUND}`} stroke={INK} strokeWidth={5} />
+    </svg>
+  );
+};
+
 /** Apagón en casa: casi negro, con la luna por la ventana. */
 const NightHome: React.FC = () => (
   <svg viewBox={`0 0 ${W} ${H}`} width={W} height={H} style={{ position: "absolute", inset: 0 }}>
@@ -267,12 +304,13 @@ export const SetBg: React.FC<{ set: SetName }> = ({ set }) => {
   if (set === "street") return <Street />;
   if (set === "night") return <NightHome />;
   if (set === "beach") return <Beach />;
+  if (set === "fiesta") return <Fiesta />;
   if (set === "sunset") return <Beach sunset />;
   return null;
 };
 
 /** ¿El escenario es oscuro? (para los subtítulos con fondo). */
-export const darkSet = (s?: SetName) => s === "night";
+export const darkSet = (s?: SetName) => s === "night" || s === "fiesta";
 
 export const _consts = { W, H, INK };
 export const StreetNight: React.FC = () => <Street night />;
