@@ -15,7 +15,7 @@ Nada se paga por la app. Voz: Nicole – Español Neutro – Narrativa · Eleven
 > Tres días sin agua, cinco clientas y una pipa que llegó con Katy a medio acrílico 💧💅
 > ¿Cuántos días lleva tu cuadra sin agua? Cuéntamelo abajo 👇
 > Y si tienes un salón y quieres que tus clientas reserven solas, escríbeme MARIAN por privado. 5 días gratis 💅
-> #manicurista #uñas #salondebelleza #emprendedoras #cuba #lahabana #humor #citora
+> #humorcubano #cuba #cubanos #lahabana #habana #uñascuba #manicuristascubanas #emprendedorascubanas #salonesdebellezacuba #citora
 
 ---
 
@@ -28,7 +28,7 @@ Nada se paga por la app. Voz: Nicole – Español Neutro – Narrativa · Eleven
 > Me mandaron 12 esmaltes de Miami. Llegaron 6. Y uno era verde lagartija con fiebre 💚😐
 > ¿A ti también te llega el paquete «a la mitad»? 👇 Etiqueta a la prima que siempre dice «el lunes».
 > Si tienes un salón, escríbeme MARIAN por privado y te hago la app de reservas gratis 💅
-> #manicurista #uñas #salondebelleza #emprendedoras #cuba #lahabana #humor #citora
+> #humorcubano #cuba #cubanos #lahabana #habana #uñascuba #manicuristascubanas #emprendedorascubanas #salonesdebellezacuba #citora
 
 ---
 
@@ -41,7 +41,7 @@ Nada se paga por la app. Voz: Nicole – Español Neutro – Narrativa · Eleven
 > Catorce clientas, una mesa, un apagón… y la quinceañera atendida al lado del cake 🎂💅
 > ¿Cuántas damas tuvieron tus quince? 👇 Etiqueta a la madrina que quería «lo mismo pero que no se note».
 > Si tienes un salón, escríbeme MARIAN por privado: tus clientas cogen su hora solas. 5 días gratis 💅
-> #manicurista #uñas #salondebelleza #emprendedoras #cuba #lahabana #humor #citora #quince
+> #humorcubano #cuba #cubanos #lahabana #habana #uñascuba #manicuristascubanas #emprendedorascubanas #salonesdebellezacuba #citora
 
 ---
 
@@ -54,4 +54,4 @@ Nada se paga por la app. Voz: Nicole – Español Neutro – Narrativa · Eleven
 > Me quedan 40 megas y la tardona me manda audios de 3 minutos para decirme que llega tarde 📵😐
 > ¿Cuántos megas te come un grupo de WhatsApp al día? 👇 Etiqueta a la que manda audios de 4 minutos.
 > Si tienes un salón, escríbeme MARIAN por privado: tus clientas reservan con sus datos, no con los tuyos 💅
-> #manicurista #uñas #salondebelleza #emprendedoras #cuba #lahabana #humor #citora
+> #humorcubano #cuba #cubanos #lahabana #habana #uñascuba #manicuristascubanas #emprendedorascubanas #salonesdebellezacuba #citora

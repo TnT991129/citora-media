@@ -88,3 +88,13 @@ En WhatsApp y Telegram hay grupos y canales de emprendedoras cubanas y de venta 
 - Mensajes privados que llegan después de cada publicación.
 - Apps creadas por semana (en tu panel de administrador → Estadísticas → altas).
 - Qué grupo trae más. Después de 2 semanas, concéntrate en los 5 mejores.
+
+## 5. Llegar solo a Cuba (18-nov-2026)
+Instagram y Facebook no permiten elegir el país de quien ve un Reel, y Meta no deja segmentar anuncios hacia Cuba.
+Señales que sí funcionan:
+- Ubicación «La Habana, Cuba» (o la provincia) en cada publicación.
+- Hashtags cubanos: #humorcubano #cuba #cubanos #lahabana #habana #uñascuba #manicuristascubanas #emprendedorascubanas #salonesdebellezacuba. Nada de #humor o #emprendedoras a secas.
+- Primera hora: compartirlo en estados de WhatsApp, grupos cubanos de Facebook y canales de Telegram.
+- Comentar a diario en cuentas de salones cubanos y hacer Reels en colaboración con manicuristas cubanas.
+- Preguntas que solo contesta un cubano («¿en qué provincia estás?»).
+- Ojo: muchos cubanos usan VPN/Psiphon y salen en las estadísticas como de otro país.
