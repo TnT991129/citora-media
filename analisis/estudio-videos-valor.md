@@ -67,3 +67,21 @@ van marcadas como «ejemplo».
 > #manicuristacubana #nailscuba #uñascuba #uñashabana #salondebellezacuba #manicuristaemprendedora #tipsparamanicuristas #preciosdeuñas #humordeuñas #citora
 
 **Ejemplo en pantalla (marcado «ejemplo»):** acrílico de 2 h 30 min → material 900 + gastos 100/h × 2,5 = 250 + tu hora 500 × 2,5 = 1.250 → **2.400 CUP**.
+
+---
+
+## Video C · «Fotos que venden (con el teléfono que tengas)» (~85 s)
+
+Basado en el formato que mejor funcionó en el estudio después de los trucos técnicos: «De nada sirve una uña perfecta si la
+foto no la valora» (3,5 M). Valor: cinco trucos de foto que cualquier manicurista puede usar hoy, sin gastar. La app sale
+de pasada en «tu perfil y tu galería» (la galería de trabajos es una función real).
+
+```
+[dry sarcastic deadpan comedian, expressive storytelling, natural conversational intonation, never laughs] Tu trabajo es precioso. [pause] Tu foto, no. [pause] [dry] Y la clienta solo ve la foto. [long pause] Cinco trucos para que tus uñas vendan. [pause] Con el teléfono que tengas. [pause] [flat] Aunque tenga la pantalla rota. [long pause] Uno. La luz. [pause] Nada de flash. Nada de bombillo amarillo. [pause] Ponte al lado de la ventana, por la mañana. [pause] [dry] La única luz que no se va con el apagón es la del sol. [long pause] Dos. El fondo. [pause] Liso y claro. Una hoja blanca, una tela, una toalla. [pause] [flat] No el mantel de flores de tu abuela. [long pause] Tres. La mano. [pause] Relajada. Dedos juntitos. Un poco de lado. [pause] [dry] Ni puño, ni garra. Que no parezca que está pidiendo el turno. [long pause] Cuatro. Limpia antes. [pause] Un poquito de aceite en la cutícula, y quita el polvo. [pause] [flat] En la foto todo se ve. Hasta la pelusa. [long pause] Cinco. Acércate. No hagas zoom. [pause] El zoom rompe la foto. Tus pies, no. [long pause] Y si puedes, un video de tres segundos. [pause] La mano girando despacito. [pause] [dry] Los brillitos se venden solos. [long pause] Pon la mejor foto en tu perfil y en tu galería. [pause] Que la clienta la vea antes de escribirte. [pause] Y que reserve. [long pause] Guarda este video. [pause] Y mándaselo a la que hace las fotos con la chancleta detrás. [long pause] [sighs] En fin… [pause] [casual] menos mensajes, más uñas, mija.
+```
+
+**Pie de foto:**
+> 5 trucos para que la foto de tus uñas venda (con el teléfono que tengas) 📸💅
+> Guárdalo y mándaselo a la que hace las fotos con la chancleta detrás 😅 ¿Cuál no hacías? 👇
+> Si quieres que tus clientas vean tus mejores trabajos y reserven solas, escríbeme MARIAN por privado. 5 días gratis 💅
+> #manicuristacubana #nailscuba #uñascuba #uñashabana #salondebellezacuba #tipsparamanicuristas #fotosdeuñas #manicuristasprofesionales #humordeuñas #citora
