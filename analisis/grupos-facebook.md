@@ -98,3 +98,14 @@ Señales que sí funcionan:
 - Comentar a diario en cuentas de salones cubanos y hacer Reels en colaboración con manicuristas cubanas.
 - Preguntas que solo contesta un cubano («¿en qué provincia estás?»).
 - Ojo: muchos cubanos usan VPN/Psiphon y salen en las estadísticas como de otro país.
+
+## 6. Que lo vean las DUEÑAS de salones en Cuba (18-nov-2026)
+El público no son los cubanos en general: son manicuristas, lashistas, peluqueras y barberos con negocio en Cuba.
+- **Hashtags que usan ellas** (sacados de 95 negocios cubanos en Instagram): #manicuristacubana #nailscuba #uñascuba
+  #uñashabana #salondebellezacuba #lashistacuba #pestañascuba #humordeuñas #humordemanicuras (+ provincia: #uñascamaguey,
+  #uñasmatanzas, #uñasholguin…). Ya usan hashtags de humor de su oficio: es justo el contenido de Marian.
+- **Ir a buscarlas**: hoja `entregas/prospectos/prospectos-salones-cuba.xlsx` (95 negocios, no se sube al repo):
+  día 1 seguir + comentario sincero; día 2-3 mensaje privado; unas 20 al día.
+- **Interactuar a diario** con esas cuentas: Instagram enseña tus Reels a quien se parece a quien interactúa contigo.
+- **Colaboraciones**: proponer a 2-3 manicuristas con 2.000-20.000 seguidores un Reel en colaboración (Marian + su salón).
+- **Pie de foto que llama a la dueña**: «Si tienes salón…», «Manicuristas: ¿a ustedes también…?».
