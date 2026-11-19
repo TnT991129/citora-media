@@ -75,7 +75,7 @@ export const Label: React.FC<{ children: React.ReactNode; color?: string; size?:
 
 export const Chip: React.FC<{ children: React.ReactNode; bg: string; color?: string; style?: React.CSSProperties }> = ({ children, bg, color = '#08130c', style }) => (
   <div style={{
-    display: 'inline-flex', alignItems: 'center', gap: 12, padding: '12px 24px', borderRadius: 14,
+    display: 'inline-flex', alignItems: 'center', gap: 12, padding: '12px 24px', borderRadius: 14, whiteSpace: 'nowrap',
     background: bg, color, fontFamily: FONT_MONO, fontWeight: 700, fontSize: 30, letterSpacing: '0.1em', textTransform: 'uppercase',
     ...style,
   }}>{children}</div>

@@ -33,7 +33,7 @@ export const Hook: React.FC = () => {
   const t = useT();
   const top = ramp(t, 0.05, 0.35);
   const cuba = ramp(t, B.cuba, B.cuba + 0.3);
-  const punch = 1 + 0.04 * Math.sin(Math.min(1, Math.max(0, (t - 3.85) / 0.3)) * Math.PI);
+  const punch = 1 + 0.04 * Math.sin(Math.min(1, Math.max(0, (t - 4.78) / 0.3)) * Math.PI);
   return (
     <div style={{ position: 'absolute', inset: 0, transform: `scale(${punch})` }}>
       <div style={{ position: 'absolute', left: 96, top: 230, fontFamily: FONT_HEAD, fontWeight: 800, fontSize: 150, lineHeight: 0.92, textTransform: 'uppercase' }}>
@@ -47,6 +47,16 @@ export const Hook: React.FC = () => {
       <div style={{ position: 'absolute', left: 96, top: 1250, opacity: cuba, transform: `translateY(${(1 - cuba) * 30}px)` }}>
         <Chip bg={C.green}>🇨🇺 Hecha para Cuba</Chip>
       </div>
+      <InterestChip />
+    </div>
+  );
+};
+
+const InterestChip: React.FC = () => {
+  const p = useSpringAt(4.7, { damping: 8, stiffness: 240 });
+  return (
+    <div style={{ position: 'absolute', left: 560, top: 1236, transform: `rotate(${-5 * p}deg) scale(${p})`, opacity: Math.min(1, p * 2) }}>
+      <Chip bg={C.coral} color="#fff" style={{ fontSize: 32, padding: '16px 26px', boxShadow: '0 0 50px rgba(240,83,46,0.5)' }}>👀 Te interesa</Chip>
     </div>
   );
 };
@@ -56,8 +66,9 @@ const RoleCard: React.FC<{ i: number; at: number; label: string; service: string
   const p = useSpringAt(at - 0.05);
   const next = ROLES[i + 1]?.at ?? 99;
   const active = t >= at && t < next;
-  const x = 96 + i * 290;
-  const rot = [-7, 0, 7][i];
+  const gather = ramp(t, 3.58, 4.1, 0, 1, Easing.inOut(Easing.cubic));
+  const x = 96 + i * 290 + gather * (1 - i) * 70;
+  const rot = [-7, 0, 7][i] * (1 + gather * 0.6);
   return (
     <Card glow={active} style={{
       left: x, top: 720 + (i === 1 ? -20 : 10), width: 300, height: 420,
@@ -87,7 +98,7 @@ export const Pain: React.FC = () => {
   return (
     <>
       {!swap ? (
-        <Headline light at={4.4} top="Todo el día" bottom="Contestando" />
+        <Headline light at={5.75} top="Todo el día" bottom="Contestando" />
       ) : (
         <Headline light at={B.plantada - 0.45} top="Y aun así" bottom="te plantan" />
       )}
@@ -105,7 +116,7 @@ export const Pain: React.FC = () => {
           <div style={{ width: 300 }}>
             <div style={{ fontFamily: FONT_BODY, fontWeight: 800, fontSize: 200, color: C.coral, lineHeight: 1, letterSpacing: '-0.04em', transform: `translateX(${shake}px)` }}>{count}</div>
             <Label size={26} style={{ marginTop: 8 }}>Mensajes sin leer</Label>
-            <div style={{ marginTop: 40 }}><Chip bg={C.red} color="#fff">⏱ 3 h al día</Chip></div>
+            <div style={{ marginTop: 40 }}><Chip bg={C.red} color="#fff" style={{ fontSize: 26, padding: '12px 18px' }}>⏱ 3 h al día</Chip></div>
           </div>
           <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 16 }}>
             {MSGS.map((m, i) => {
@@ -174,7 +185,7 @@ const Libreta: React.FC = () => {
 const Plantada: React.FC = () => {
   const t = useT();
   const p = useSpringAt(B.plantada - 0.25, { damping: 16 });
-  const stamp = useSpringAt(B.plantada + 0.25, { damping: 10, stiffness: 260 });
+  const stamp = useSpringAt(B.noVino, { damping: 10, stiffness: 260 });
   if (t < B.plantada - 0.3) return null;
   return (
     <Card style={{ left: 96, top: 700, width: 888, height: 520, padding: 44, transform: `translateY(${(1 - p) * 600}px)`, opacity: Math.min(1, p * 1.3) }}>
@@ -201,7 +212,7 @@ const SLOTS = [
 
 export const Solution: React.FC = () => {
   const t = useT();
-  const phone = useSpringAt(11.2, { damping: 15 });
+  const phone = useSpringAt(12.5, { damping: 15 });
   const logo = useSpringAt(B.citora - 0.1, { damping: 9, stiffness: 220 });
   const tap = ramp(t, B.reservan, B.reservan + 0.35);
   const booked = useSpringAt(B.reservan + 0.6, { damping: 12 });
@@ -210,7 +221,7 @@ export const Solution: React.FC = () => {
   return (
     <>
       <div style={{ position: 'absolute', left: 96, top: 230, fontFamily: FONT_HEAD, fontWeight: 800, fontSize: 150, lineHeight: 0.92, textTransform: 'uppercase' }}>
-        <span style={{ display: 'block', color: C.cream, opacity: ramp(t, 10.8, 11.1), filter: `blur(${(1 - ramp(t, 10.8, 11.1)) * 12}px)` }}>Por eso creé</span>
+        <span style={{ display: 'block', color: C.cream, opacity: ramp(t, 12.12, 12.42), filter: `blur(${(1 - ramp(t, 12.12, 12.42)) * 12}px)` }}>Por eso creé</span>
         <span style={{ display: 'flex', alignItems: 'center', gap: 28, color: C.coral }}>
           <span style={{ display: 'inline-block', transform: `scale(${logo})`, opacity: Math.min(1, logo * 2) }}>Citora</span>
           <span style={{ display: 'inline-block', transform: `scale(${logo}) rotate(${(1 - logo) * -90}deg)` }}><Logo size={120} /></span>
@@ -291,14 +302,14 @@ const AGENDA = [
 
 export const Agenda: React.FC = () => {
   const t = useT();
-  const card = useSpringAt(16.75, { damping: 16 });
+  const card = useSpringAt(18.95, { damping: 16 });
   const toast = useSpringAt(B.telefono, { damping: 13 });
   const toastOut = ramp(t, B.telefono + 1.0, B.telefono + 1.3);
-  const n = Math.round(ramp(t, 17.3, 18.4, 0, AGENDA.length));
+  const n = Math.round(ramp(t, 19.6, 20.9, 0, AGENDA.length));
   const full = useSpringAt(B.organizado + 0.1, { damping: 9, stiffness: 220 });
   return (
     <>
-      <Headline light at={16.8} top="Tu día" bottom="ya organizado" />
+      <Headline light at={19.0} top="Tu día" bottom="ya organizado" />
       <Card style={{ left: 96, top: 610, width: 888, height: 700, padding: 36, transform: `translateY(${(1 - card) * 500}px)`, opacity: Math.min(1, card * 1.4) }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Label>Hoy · jueves</Label>
@@ -306,7 +317,7 @@ export const Agenda: React.FC = () => {
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginTop: 22 }}>
           {AGENDA.map((a, i) => {
-            const p = ramp(t, 17.2 + i * 0.22, 17.5 + i * 0.22);
+            const p = ramp(t, 19.5 + i * 0.26, 19.8 + i * 0.26);
             return (
               <div key={a.h} style={{
                 display: 'flex', alignItems: 'center', gap: 26, padding: '14px 24px', borderRadius: 20,
@@ -354,16 +365,19 @@ export const Cta: React.FC = () => {
   const sent = t >= B.salon + 1.0;
   const send = useSpringAt(B.salon + 1.0, { damping: 12 });
   const dm = useSpringAt(B.info, { damping: 14 });
-  const bar = useSpringAt(20.25, { damping: 16 });
+  const bar = useSpringAt(22.15, { damping: 16 });
   const caret = Math.floor(frame / 8) % 2 === 0;
   const salonPop = useSpringAt(B.salon - 0.1, { damping: 8, stiffness: 240 });
 
   return (
     <>
       <div style={{ position: 'absolute', left: 96, top: 230, fontFamily: FONT_HEAD, fontWeight: 800, fontSize: 190, lineHeight: 0.9, textTransform: 'uppercase' }}>
-        <span style={{ display: 'block', color: C.cream, opacity: ramp(t, 20.2, 20.5), filter: `blur(${(1 - ramp(t, 20.2, 20.5)) * 14}px)` }}>Comenta</span>
+        <span style={{ display: 'block', color: C.cream, opacity: ramp(t, 22.1, 22.4), filter: `blur(${(1 - ramp(t, 22.1, 22.4)) * 14}px)` }}>Comenta</span>
         <span style={{ display: 'inline-block', color: C.coral, transform: `scale(${salonPop})`, transformOrigin: 'left center', textShadow: '0 0 60px rgba(240,83,46,0.45)' }}>Salón</span>
       </div>
+
+      {/* Flecha hacia los comentarios */}
+      <div style={{ position: 'absolute', left: 850, top: 545 + Math.abs(Math.sin(frame / 6)) * 40, fontSize: 120, opacity: ramp(t, B.salon + 0.3, B.salon + 0.6), transform: `rotate(${10}deg)` }}>👇</div>
 
       {/* Caja de comentario */}
       <Card style={{ left: 96, top: 690, width: 888, height: 130, padding: '0 30px', display: 'flex', alignItems: 'center', gap: 22, transform: `translateY(${(1 - bar) * 300}px)`, opacity: Math.min(1, bar * 1.5), borderRadius: 65 }}>
@@ -391,7 +405,7 @@ export const Cta: React.FC = () => {
           <Label size={22} color={C.coral}>Mensaje privado · citora_reservas</Label>
         </div>
         <div style={{ fontFamily: FONT_BODY, fontWeight: 700, fontSize: 40, color: C.cream, marginTop: 18 }}>¡Hola! Te paso toda la info 📩</div>
-        <div style={{ position: 'absolute', right: 30, bottom: 26 }}><Chip bg={C.coral} color="#fff" style={{ fontSize: 26 }}>Ver info</Chip></div>
+        <div style={{ position: 'absolute', right: 30, bottom: 26, transform: `scale(${t > B.info + 0.8 ? 1 + 0.06 * Math.sin((t - B.info) * 7) : 1})` }}><Chip bg={C.coral} color="#fff" style={{ fontSize: 26, boxShadow: `0 0 ${20 + 20 * Math.sin((t - B.info) * 7)}px rgba(240,83,46,0.6)` }}>Ver info</Chip></div>
       </Card>
     </>
   );
