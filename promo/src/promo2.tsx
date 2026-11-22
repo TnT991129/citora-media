@@ -215,37 +215,53 @@ const App: React.FC = () => {
   );
 };
 
-/* ───────────── 6 · GUARDA + COMENTA ───────────── */
+/* ───────────── 6 · GUARDA + ENLACE DEL PERFIL ───────────── */
 const Cta: React.FC = () => {
   const t = useT();
   const frame = useCurrentFrame();
   const swap = t >= B.app - 0.1;
   const save = useSpringAt(B.guarda, { damping: 8, stiffness: 230 });
   const saved = t >= B.guarda + 0.45;
-  const word = 'SALÓN';
-  const typed = Math.floor(ramp(t, B.salon, B.salon + 0.6, 0, word.length, Easing.linear));
-  const bar = useSpringAt(B.app, { damping: 15 });
-  const caret = Math.floor(frame / 8) % 2 === 0;
+  const prof = useSpringAt(B.app, { damping: 15 });
+  const linkHi = ramp(t, B.enlace - 0.1, B.enlace + 0.25);
+  const tap = ramp(t, B.enlace + 0.45, B.enlace + 0.8);
+  const free = useSpringAt(B.gratis, { damping: 9, stiffness: 230 });
+  const out = swap ? ramp(t, B.app - 0.1, B.app + 0.2) : 0;
   return (
     <>
-      {!swap ? <Headline light at={25.5} top="Guarda" bottom="este vídeo" size={170} /> : <Headline light at={B.app - 0.1} top="Comenta" bottom="Salón" size={190} />}
+      {!swap ? <Headline light at={25.5} top="Guarda" bottom="este vídeo" size={170} /> : <Headline light at={B.app - 0.1} top="Enlace en" bottom="mi perfil" size={170} />}
       {/* Botón de guardar */}
-      <div style={{ position: 'absolute', left: 390, top: 680, width: 300, height: 300, borderRadius: 80, background: C.card, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 30px 80px rgba(0,0,0,0.3)', transform: `scale(${save * (swap ? 1 - ramp(t, B.app - 0.1, B.app + 0.2) : 1)})`, opacity: swap ? 1 - ramp(t, B.app - 0.1, B.app + 0.2) : 1 }}>
+      <div style={{ position: 'absolute', left: 390, top: 680, width: 300, height: 300, borderRadius: 80, background: C.card, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 30px 80px rgba(0,0,0,0.3)', transform: `scale(${save * (1 - out)})`, opacity: 1 - out }}>
         <svg width="150" height="150" viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4.5L6 21z" fill={saved ? C.coral : 'none'} stroke={saved ? C.coral : C.cream} strokeWidth="1.8" strokeLinejoin="round" /></svg>
       </div>
-      {/* Caja de comentario */}
-      <Card style={{ left: 96, top: 720, width: 888, height: 130, padding: '0 30px', display: 'flex', alignItems: 'center', gap: 22, transform: `translateY(${(1 - bar) * 500}px)`, opacity: Math.min(1, bar * 1.5), borderRadius: 65 }}>
-        <div style={{ width: 76, height: 76, borderRadius: 38, background: 'linear-gradient(135deg,#a78bfa,#f472b6)' }} />
-        <div style={{ flex: 1, fontFamily: FONT_BODY, fontWeight: 700, fontSize: 48, color: C.cream }}>{word.slice(0, typed)}{caret && <span style={{ color: C.coral }}>|</span>}</div>
-        <div style={{ width: 84, height: 84, borderRadius: 42, background: typed === word.length ? C.coral : 'rgba(255,255,255,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <svg width="40" height="40" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="#fff" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
+      {/* Perfil */}
+      <Card style={{ left: 96, top: 620, width: 888, height: 600, padding: 40, transform: `translateY(${(1 - prof) * 600}px)`, opacity: Math.min(1, prof * 1.5) }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 34 }}>
+          <div style={{ padding: 6, borderRadius: '50%', background: 'linear-gradient(135deg,#fb7185,#fb923c)' }}>
+            <div style={{ width: 150, height: 150, borderRadius: '50%', background: '#1b1513', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Logo size={100} /></div>
+          </div>
+          <div>
+            <div style={{ fontFamily: FONT_BODY, fontWeight: 800, fontSize: 44, color: C.cream }}>citora_reservas</div>
+            <Label size={24} style={{ marginTop: 8 }}>App de reservas · Cuba 🇨🇺</Label>
+          </div>
+        </div>
+        <div style={{ fontFamily: FONT_BODY, fontWeight: 500, fontSize: 34, color: C.muted, marginTop: 34, lineHeight: 1.35 }}>
+          Tus clientas reservan solas 💅<br />Recordatorios y lista de espera 📲
+        </div>
+        <div style={{
+          position: 'relative', marginTop: 30, display: 'inline-flex', alignItems: 'center', gap: 16, padding: '18px 28px', borderRadius: 20,
+          background: `rgba(240,83,46,${0.08 + linkHi * 0.22})`, border: `2.5px solid rgba(240,83,46,${0.2 + linkHi * 0.8})`,
+          boxShadow: `0 0 ${linkHi * 50}px rgba(240,83,46,0.5)`, transform: `scale(${1 + linkHi * 0.05 - 0.05 * Math.sin(tap * Math.PI)})`, transformOrigin: 'left center',
+        }}>
+          <span style={{ fontSize: 40 }}>🔗</span>
+          <span style={{ fontFamily: FONT_MONO, fontWeight: 700, fontSize: 36, color: C.coral }}>tnt991129.github.io/Citora</span>
+          {tap > 0 && tap < 1 && <span style={{ position: 'absolute', left: '50%', top: '50%', width: 60 + tap * 220, height: 60 + tap * 220, marginLeft: -(30 + tap * 110), marginTop: -(30 + tap * 110), borderRadius: '50%', border: '5px solid #fff', opacity: 1 - tap }} />}
         </div>
       </Card>
-      <div style={{ position: 'absolute', left: 820, top: 590 + Math.abs(Math.sin(frame / 6)) * 40, fontSize: 110, opacity: ramp(t, B.salon, B.salon + 0.3) }}>👇</div>
-      <Card glow style={{ left: 96, top: 900, width: 888, height: 200, padding: '28px 34px', opacity: ramp(t, B.salon + 0.9, B.salon + 1.2), transform: `translateY(${(1 - ramp(t, B.salon + 0.9, B.salon + 1.2)) * 200}px)` }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}><Logo size={48} /><Label size={22} color={C.coral}>Mensaje privado · citora_reservas</Label></div>
-        <div style={{ fontFamily: FONT_BODY, fontWeight: 700, fontSize: 40, color: C.cream, marginTop: 18 }}>¡Hola! Te paso toda la info 📩</div>
-      </Card>
+      <div style={{ position: 'absolute', left: 700, top: 1000 + Math.abs(Math.sin(frame / 6)) * 30, fontSize: 110, opacity: ramp(t, B.enlace + 0.1, B.enlace + 0.4), transform: 'rotate(-20deg)' }}>👆</div>
+      <div style={{ position: 'absolute', left: 560, top: 1200, transform: `rotate(${-6 * free}deg) scale(${free})`, opacity: Math.min(1, free * 2) }}>
+        <Chip bg={C.green} style={{ fontSize: 34, padding: '16px 28px' }}>✓ Pruébala gratis</Chip>
+      </div>
     </>
   );
 };

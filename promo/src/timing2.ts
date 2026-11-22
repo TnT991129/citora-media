@@ -8,10 +8,10 @@ export const SCENES2 = {
   tip1: [10.2, 14.4],
   tip2: [14.4, 19.0],
   app: [19.0, 25.4],
-  cta: [25.4, 29.6],
+  cta: [25.4, 30.6],
 } as const;
 
-export const TOTAL2 = 29.6;
+export const TOTAL2 = 30.6;
 
 export const B2 = {
   numero: 0.0,
@@ -35,7 +35,8 @@ export const B2 = {
   whatsapp: 23.6,
   guarda: 25.6,
   app: 26.6,
-  salon: 27.6,
+  enlace: 27.4,
+  gratis: 28.4,
 };
 
 /** Reparte las palabras de una frase entre `a` y `b` (solo mientras no haya voz) */
@@ -61,7 +62,8 @@ export const CAPTIONS2: Word[][] = [
   phrase('y quién está esperando un hueco,', 22.4, 23.5, ['esperando']),
   phrase('con el WhatsApp ya escrito.', 23.6, 25.1, ['whatsapp', 'escrito']),
   phrase('Guarda este vídeo.', 25.6, 26.4, ['guarda']),
-  phrase('Y si quieres la app, comenta «SALÓN».', 26.5, 28.4, ['salón']),
+  phrase('Y si quieres la app, entra al enlace de mi perfil', 26.5, 28.2, ['enlace', 'perfil']),
+  phrase('y pruébala gratis.', 28.3, 29.2, ['gratis']),
 ];
 
 export const AUDIO2: string | null = null; // 'voz2.mp3' cuando llegue
