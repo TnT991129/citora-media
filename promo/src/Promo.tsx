@@ -48,6 +48,8 @@ export const CaptionsFor: React.FC<{ caps: Word[][]; isLight: (t: number) => boo
   const chunk = caps[idx];
   const light = isLight(t);
   if (isLight(chunk[0].t) !== light) return null; // no arrastrar subtítulos a otra escena
+  const next = caps[idx + 1]?.[0].t ?? Infinity;
+  if (t > chunk[chunk.length - 1].t + 0.9 && t < next) return null; // en los silencios largos, fuera
   return (
     <div style={{
       position: 'absolute', left: 96, right: 140, top: 1355, fontFamily: FONT_BODY, fontWeight: 600, fontSize: 52, lineHeight: 1.22,

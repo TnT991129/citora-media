@@ -17,7 +17,7 @@ const Hook: React.FC = () => {
   const pulse = t > 1.1 ? 1 + 0.015 * Math.sin(frame / 4) : 1;
   return (
     <>
-      <Headline at={1.3} top="Lo que pierdes" bottom="cada mes" />
+      <Headline at={1.8} top="Lo que pierdes" bottom="cada mes" />
       <Card glow style={{ left: 96, top: 600, width: 888, height: 560, padding: 46, transform: `scale(${(0.7 + 0.3 * slam) * pulse})`, opacity: Math.min(1, slam * 2) }}>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <Label>Tu salón · este mes</Label>
@@ -53,7 +53,7 @@ const Math2: React.FC = () => {
   const line = ramp(t, B.total - 0.25, B.total);
   return (
     <>
-      <Headline light at={5.35} top="Haz la" bottom="cuenta" />
+      <Headline light at={6.35} top="Haz la" bottom="cuenta" />
       <Card style={{ left: 96, top: 600, width: 888, height: 640, padding: 46 }}>
         <Label>Calculadora · tu salón</Label>
         <div style={{ marginTop: 30, display: 'flex', flexDirection: 'column', gap: 22 }}>
@@ -86,7 +86,7 @@ const Tip1: React.FC = () => {
   const swap = t >= B.primero - 0.15;
   return (
     <>
-      {!swap ? <Headline at={10.3} top="¿Cómo se" bottom="arregla?" /> : <Headline at={B.primero - 0.15} top="Paso 1" bottom="Confirma" />}
+      {!swap ? <Headline at={11.6} top="¿Cómo se" bottom="arregla?" /> : <Headline at={B.primero - 0.15} top="Paso 1" bottom="Confirma" />}
       <Card style={{ left: 96, top: 600, width: 888, height: 640, padding: 40, opacity: Math.min(1, step * 1.5), transform: `translateY(${(1 - step) * 300}px)` }}>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <Label>WhatsApp · la noche antes</Label>
@@ -113,13 +113,13 @@ const WAIT = ['Daniela', 'Lisandra', 'Mileidys'];
 
 const Tip2: React.FC = () => {
   const t = useT();
-  const card = useSpringAt(14.5, { damping: 15 });
+  const card = useSpringAt(16.1, { damping: 15 });
   const cancel = useSpringAt(B.cancela - 0.9, { damping: 10, stiffness: 240 });
   const fill = ramp(t, B.cancela - 0.1, B.cancela + 0.4);
   const fillPop = useSpringAt(B.cancela + 0.1, { damping: 9 });
   return (
     <>
-      <Headline light at={14.5} top="Paso 2" bottom="Lista de espera" size={140} />
+      <Headline light at={16.05} top="Paso 2" bottom="Lista de espera" size={140} />
       <Card style={{ left: 96, top: 600, width: 888, height: 640, padding: 40, transform: `translateY(${(1 - card) * 400}px)`, opacity: Math.min(1, card * 1.5) }}>
         <Label>Sábado · 14:00</Label>
         <div style={{ position: 'relative', marginTop: 20, height: 120, borderRadius: 24, border: `2.5px solid ${fill > 0.5 ? C.green : 'rgba(255,59,48,0.6)'}`, background: fill > 0.5 ? 'rgba(61,220,132,0.12)' : 'rgba(255,59,48,0.08)', display: 'flex', alignItems: 'center', padding: '0 30px', gap: 24 }}>
@@ -162,14 +162,14 @@ const REM = [{ n: 'Yanelis', h: '14:00' }, { n: 'Yaima', h: '10:30' }, { n: 'Lis
 const App: React.FC = () => {
   const t = useT();
   const logo = useSpringAt(B.citora - 0.1, { damping: 9, stiffness: 220 });
-  const card = useSpringAt(19.3, { damping: 15 });
+  const card = useSpringAt(20.85, { damping: 15 });
   const wait = ramp(t, B.esperando - 0.1, B.esperando + 0.3);
   const tap = ramp(t, B.whatsapp, B.whatsapp + 0.35);
   const msg = useSpringAt(B.whatsapp + 0.3, { damping: 12 });
   return (
     <>
       <div style={{ position: 'absolute', left: 96, top: 230, fontFamily: FONT_HEAD, fontWeight: 800, fontSize: 150, lineHeight: 0.92, textTransform: 'uppercase' }}>
-        <span style={{ display: 'block', color: C.cream, opacity: ramp(t, 19.1, 19.4), filter: `blur(${(1 - ramp(t, 19.1, 19.4)) * 12}px)` }}>Para eso hice</span>
+        <span style={{ display: 'block', color: C.cream, opacity: ramp(t, 20.6, 20.9), filter: `blur(${(1 - ramp(t, 20.6, 20.9)) * 12}px)` }}>Para eso hice</span>
         <span style={{ display: 'flex', alignItems: 'center', gap: 28, color: C.coral }}>
           <span style={{ display: 'inline-block', transform: `scale(${logo})`, opacity: Math.min(1, logo * 2) }}>Citora</span>
           <span style={{ display: 'inline-block', transform: `scale(${logo}) rotate(${(1 - logo) * -90}deg)` }}><Logo size={120} /></span>
@@ -202,7 +202,7 @@ const App: React.FC = () => {
         </div>
       </Card>
       {/* Mensaje ya escrito */}
-      <div style={{ position: 'absolute', left: 130, right: 130, top: 1130, transform: `translateY(${(1 - msg) * 200}px) scale(${0.9 + 0.1 * msg})`, opacity: Math.min(1, msg * 2) }}>
+      <div style={{ position: 'absolute', left: 130, right: 130, top: 1120, transform: `translateY(${(1 - msg) * -60}px) scale(${0.85 + 0.15 * msg})`, opacity: Math.min(1, msg * 2) }}>
         <div style={{ background: '#e7fbe9', borderRadius: 26, padding: '22px 28px', boxShadow: '0 20px 60px rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', gap: 18 }}>
           <span style={{ fontFamily: FONT_BODY, fontWeight: 600, fontSize: 30, color: '#0b2614', flex: 1 }}>Hola Yanelis 💅 te recuerdo tu cita mañana a las 14:00…</span>
           <span style={{ width: 64, height: 64, borderRadius: 32, background: '#25d366', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -229,7 +229,7 @@ const Cta: React.FC = () => {
   const out = swap ? ramp(t, B.app - 0.1, B.app + 0.2) : 0;
   return (
     <>
-      {!swap ? <Headline light at={25.5} top="Guarda" bottom="este vídeo" size={170} /> : <Headline light at={B.app - 0.1} top="Enlace en" bottom="mi perfil" size={170} />}
+      {!swap ? <Headline light at={27.8} top="Guarda" bottom="este vídeo" size={170} /> : <Headline light at={B.app - 0.1} top="Enlace en" bottom="mi perfil" size={170} />}
       {/* Botón de guardar */}
       <div style={{ position: 'absolute', left: 390, top: 680, width: 300, height: 300, borderRadius: 80, background: C.card, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 30px 80px rgba(0,0,0,0.3)', transform: `scale(${save * (1 - out)})`, opacity: 1 - out }}>
         <svg width="150" height="150" viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4.5L6 21z" fill={saved ? C.coral : 'none'} stroke={saved ? C.coral : C.cream} strokeWidth="1.8" strokeLinejoin="round" /></svg>
@@ -254,7 +254,7 @@ const Cta: React.FC = () => {
           boxShadow: `0 0 ${linkHi * 50}px rgba(240,83,46,0.5)`, transform: `scale(${1 + linkHi * 0.05 - 0.05 * Math.sin(tap * Math.PI)})`, transformOrigin: 'left center',
         }}>
           <span style={{ fontSize: 40 }}>🔗</span>
-          <span style={{ fontFamily: FONT_MONO, fontWeight: 700, fontSize: 36, color: C.coral }}>tnt991129.github.io/Citora</span>
+          <span style={{ fontFamily: FONT_MONO, fontWeight: 700, fontSize: 44, color: C.coral }}>citora-app.com</span>
           {tap > 0 && tap < 1 && <span style={{ position: 'absolute', left: '50%', top: '50%', width: 60 + tap * 220, height: 60 + tap * 220, marginLeft: -(30 + tap * 110), marginTop: -(30 + tap * 110), borderRadius: '50%', border: '5px solid #fff', opacity: 1 - tap }} />}
         </div>
       </Card>
