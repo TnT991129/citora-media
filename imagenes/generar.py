@@ -179,9 +179,180 @@ def screen_who():
     rows += ('<div style="display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:20px;background:#f6f5f8">'
              '<div class="av" style="width:58px;height:58px;font-size:24px;background:#e7e5ec;color:#6b6876">✦</div>'
              '<div style="font-weight:800;font-size:18px">Cualquiera</div></div>')
-    return (status() + '<div class="apphead"><div><div class="s">Salón Luz · Corte + Barba</div></div></div>'
+    return (status() + '<div class="apphead"><div><div class="s">Corte + Barba</div></div></div>'
             '<div style="padding:4px 22px 18px;font-weight:900;font-size:27px;letter-spacing:-0.03em;line-height:1.1">¿Con quién quieres reservar?</div>'
             f'<div style="padding:0 18px">{rows}</div>')
+
+# ───────────── Pantallas con el diseño REAL de la app (según capturas) ─────────────
+BR = '#f0532e'          # color de marca por defecto de Citora
+BR_SOFT = '#fff1ec'
+TX, MU, LN, BG = '#0f172a', '#64748b', '#e2e8f0', '#f8fafc'
+
+def ic(path, s=24, col=None, w=2):
+    return f'<svg width="{s}" height="{s}" viewBox="0 0 24 24" fill="none" stroke="{col or "currentColor"}" stroke-width="{w}" stroke-linecap="round" stroke-linejoin="round">{path}</svg>'
+I_HOME = '<path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>'
+I_CAL = '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>'
+I_USERS = '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/>'
+I_STORE = '<path d="M4 9l1.5-5h13L20 9M4 9v11h16V9M4 9h16"/><path d="M9 20v-6h6v6"/>'
+I_GRID = '<rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/>'
+I_MOON = '<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>'
+I_SPARK = '<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/>'
+I_BACK = '<path d="M15 5l-7 7 7 7"/>'
+
+def urlbar():
+    return f'<div style="text-align:center;font-weight:700;font-size:14px;color:{TX};padding:2px 0 8px">citora-app.com</div>'
+
+def biz_logo(initials='DN', s=40):
+    return (f'<div style="width:{s}px;height:{s}px;border-radius:12px;background:linear-gradient(135deg,#f43f5e,#fb923c);color:#fff;'
+            f'display:flex;align-items:center;justify-content:center;font-weight:900;font-size:{int(s*0.36)}px;flex:none">{initials}</div>')
+
+def owner_head(name='Daniela Nails', code='Código DNL-2847'):
+    return (f'<div style="display:flex;align-items:center;gap:12px;padding:10px 18px 12px;border-bottom:1px solid {LN};background:#fff">'
+            f'{biz_logo()}<div style="flex:1"><div style="font-weight:800;font-size:18px;color:{TX}">{name}</div>'
+            f'<div style="font-weight:500;font-size:13px;color:{MU}">{code}</div></div>{ic(I_MOON, 20, TX)}</div>')
+
+def navbar(active='Hoy'):
+    items = [('Hoy', I_HOME), ('Agenda', I_CAL), ('Clientes', I_USERS), ('Mi negocio', I_STORE), ('Más', I_GRID)]
+    cells = ''
+    for n, path in items:
+        on = n == active
+        cells += (f'<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;color:{BR if on else "#475569"}">'
+                  f'<div style="padding:5px 18px;border-radius:999px;{f"background:{BR_SOFT}" if on else ""}">{ic(path, 21)}</div>'
+                  f'<div style="font-weight:700;font-size:11px">{n}</div></div>')
+    return f'<div style="position:absolute;left:0;right:0;bottom:0;height:82px;background:#fff;border-top:1px solid {LN};display:flex;padding:8px 4px 0">{cells}</div>'
+
+def fab(bottom=96):
+    return (f'<div style="position:absolute;right:16px;bottom:{bottom}px;width:58px;height:58px;border-radius:18px;background:{BR};'
+            f'box-shadow:0 10px 24px rgba(240,83,46,.4);display:flex;align-items:center;justify-content:center">{ic("<path d=\"M12 5v14M5 12h14\"/>", 28, "#fff", 2.4)}</div>')
+
+def owner_shell(content, active='Hoy', name='Daniela Nails', code='Código DNL-2847', show_fab=True):
+    return (f'<div style="position:absolute;inset:0;background:{BG}"></div><div style="position:relative">{status()}{urlbar()}{owner_head(name, code)}{content}</div>'
+            + (fab() if show_fab else '') + navbar(active))
+
+TODAY = [  # (hora inicio en h, duración en h, nombre, servicio)
+    (10.0, 1.5, 'Daniela', 'Uñas acrílicas'),
+    (11.5, 1.0, 'Yaima', 'Pedicure spa'),
+    (13.0, 1.0, 'Lisandra', 'Manicure + diseño'),
+    (14.0, 1.0, 'Yanelis', 'Uñas en gel'),
+    (15.0, 0.75, 'Mileidys', 'Retoque'),
+    (16.0, 1.0, 'Arianna', 'Uñas acrílicas'),
+]
+
+def screen_hoy(items=TODAY, citas='6 citas', huecos='0 huecos libres', name='Daniela Nails', code='Código DNL-2847', start=10, hours=7, hpx=68):
+    tabs = (f'<div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px 6px">'
+            f'<div style="display:flex;background:#eef2f7;border-radius:16px;padding:4px">'
+            f'<div style="background:#fff;border-radius:12px;padding:7px 16px;font-weight:800;font-size:15px;color:{TX};box-shadow:0 1px 3px rgba(0,0,0,.08)">Hoy</div>'
+            f'<div style="padding:7px 16px;font-weight:700;font-size:15px;color:{MU}">Mañana</div></div>'
+            f'<div style="display:flex;align-items:center;gap:6px;font-weight:700;font-size:14px;color:{TX}">{ic(I_SPARK, 16, TX)}Publicar huecos</div></div>'
+            f'<div style="padding:4px 18px 10px;font-weight:600;font-size:14px;color:{MU}">{citas} · <b style="color:#15803d">{huecos}</b></div>')
+    lines = ''.join(
+        f'<div style="position:absolute;left:0;right:0;top:{i * hpx}px;border-top:1px solid #eef2f7">'
+        f'<span style="position:absolute;left:6px;top:4px;font-weight:700;font-size:11px;color:#94a3b8">{(start + i - 1) % 12 + 1} {"a.m." if start + i < 12 else "p.m."}</span></div>'
+        for i in range(hours + 1))
+    blocks = ''.join(
+        f'<div style="position:absolute;left:62px;right:10px;top:{(h - start) * hpx + 3}px;height:{d * hpx - 6}px;border-radius:12px;'
+        f'background:{BR_SOFT};border-left:4px solid {BR};padding:6px 10px;overflow:hidden">'
+        f'<div style="font-weight:800;font-size:14px;color:{TX}">{n}</div><div style="font-weight:600;font-size:12px;color:{MU}">{sv}</div></div>'
+        for h, d, n, sv in items)
+    grid = (f'<div style="margin:0 14px;height:{hours * hpx + 10}px;position:relative;background:#fff;border:1px solid {LN};border-radius:18px;overflow:hidden">'
+            f'{lines}{blocks}</div>')
+    return owner_shell(tabs + grid, 'Hoy', name, code)
+
+def screen_agenda_dia(name, code, items, total_cup):
+    days = ''.join(
+        f'<div style="flex:1;text-align:center;padding:7px 0;border-radius:12px;border:1px solid {BR if d == "27" else LN};'
+        f'{f"background:{BR};color:#fff" if d == "27" else f"background:#fff;color:{TX}"}">'
+        f'<div style="font-size:10px;font-weight:600;opacity:.75">{w}</div><div style="font-size:15px;font-weight:800">{d}</div></div>'
+        for w, d in [('Lun', '24'), ('Mar', '25'), ('Mié', '26'), ('Jue', '27'), ('Vie', '28'), ('Sáb', '29')])
+    rows = ''.join(
+        f'<div style="display:flex;gap:10px;align-items:center;background:#fff;border:1px solid {LN};border-radius:14px;padding:10px 12px;margin-bottom:8px">'
+        f'<div style="font-weight:800;font-size:13px;color:{BR};width:44px">{h}</div>'
+        f'<div><div style="font-weight:800;font-size:14px;color:{TX}">{n}</div><div style="font-weight:600;font-size:12px;color:{MU}">{sv}</div></div></div>'
+        for h, n, sv in items)
+    seg = (f'<div style="margin:0 16px;display:flex;background:#eef2f7;border-radius:14px;padding:4px">'
+           f'<div style="flex:1;text-align:center;background:#fff;border-radius:10px;padding:6px;font-weight:800;font-size:14px;color:{TX}">Día</div>'
+           f'<div style="flex:1;text-align:center;padding:6px;font-weight:700;font-size:14px;color:{MU}">Semana</div>'
+           f'<div style="flex:1;text-align:center;padding:6px;font-weight:700;font-size:14px;color:{MU}">Mes</div></div>')
+    content = (f'<div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px 10px">'
+               f'<div style="font-weight:900;font-size:24px;color:{TX}">Agenda</div>'
+               f'<div style="background:{BR};color:#fff;font-weight:800;font-size:14px;padding:7px 12px;border-radius:12px">+ Cita</div></div>'
+               + seg + f'<div style="text-align:center;padding:12px 0 2px;font-weight:800;font-size:16px;color:{TX}">Jueves 27 de noviembre</div>'
+               f'<div style="text-align:center;font-weight:600;font-size:12px;color:{MU}">{len(items)} citas · {total_cup} CUP</div>'
+               f'<div style="display:flex;gap:5px;padding:10px 14px">{days}</div><div style="padding:4px 14px">{rows}</div>')
+    return owner_shell(content, 'Agenda', name, code, False)
+
+def public_head(name='Daniela Nails'):
+    return (f'<div style="display:flex;align-items:center;gap:12px;padding:10px 16px 12px;background:#fff;border-bottom:1px solid {LN}">'
+            f'{ic(I_BACK, 22, TX)}{biz_logo("DN", 36)}<div style="font-weight:800;font-size:17px;color:{TX}">{name}</div></div>')
+
+def public_shell(content, button=None):
+    btn = (f'<div style="position:absolute;left:0;right:0;bottom:0;padding:12px 16px 26px;background:#fff;border-top:1px solid {LN}">'
+           f'<div style="height:52px;border-radius:16px;background:{BR};color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px">{button}</div></div>') if button else ''
+    return f'<div style="position:absolute;inset:0;background:{BG}"></div><div style="position:relative">{status()}{urlbar()}{public_head()}{content}</div>{btn}'
+
+def step_title(t):
+    return f'<div style="padding:18px 18px 12px;font-weight:900;font-size:25px;letter-spacing:-0.02em;color:{TX}">{t}</div>'
+
+def screen_services():
+    sv = [('Uñas acrílicas', '1 h 30 min', '1.000'), ('Uñas en gel', '1 h', '800'), ('Manicure + diseño', '1 h', '600'), ('Pedicure spa', '1 h', '700'), ('Retoque', '45 min', '500')]
+    rows = ''.join(
+        f'<div style="display:flex;align-items:center;gap:12px;padding:14px;border-radius:16px;margin-bottom:9px;background:#fff;'
+        f'border:{"2px solid " + BR if i == 0 else "1px solid " + LN}">'
+        f'<div style="width:24px;height:24px;border-radius:8px;flex:none;{f"background:{BR}" if i == 0 else "border:2px solid #cbd5e1"};display:flex;align-items:center;justify-content:center">{CHECK.format(s=16) if i == 0 else ""}</div>'
+        f'<div style="flex:1"><div style="font-weight:800;font-size:16px;color:{TX}">{n}</div><div style="font-weight:600;font-size:12px;color:{MU}">{d}</div></div>'
+        f'<div style="font-weight:800;font-size:16px;color:{TX}">{p} CUP</div></div>'
+        for i, (n, d, p) in enumerate(sv))
+    return public_shell(step_title('Elige el servicio') + f'<div style="padding:0 16px">{rows}</div>', 'Continuar')
+
+def screen_calendar():
+    days = ''.join(
+        f'<div style="flex:1;text-align:center;padding:7px 0;border-radius:12px;border:1px solid {BR if d == "28" else LN};'
+        f'{f"background:{BR};color:#fff" if d == "28" else f"background:#fff;color:{TX}"}">'
+        f'<div style="font-size:10px;font-weight:600;opacity:.75">{w}</div><div style="font-size:15px;font-weight:800">{d}</div></div>'
+        for w, d in [('Jue', '27'), ('Vie', '28'), ('Sáb', '29'), ('Lun', '1'), ('Mar', '2')])
+    hours = [('9:00', 0), ('10:30', 1), ('11:00', 1), ('12:00', 0), ('14:00', 2), ('15:30', 1), ('16:00', 1), ('17:00', 0), ('17:30', 1)]
+    cells = ''.join(
+        f'<div style="height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;'
+        + ('background:#f1f5f9;color:#cbd5e1;text-decoration:line-through' if st == 0 else
+           f'background:{BR};color:#fff' if st == 2 else 'background:#f0fdf4;color:#15803d;border:1.5px solid #86efac')
+        + f'">{h}</div>' for h, st in hours)
+    content = (step_title('Elige día y hora') + f'<div style="display:flex;gap:6px;padding:0 16px 14px">{days}</div>'
+               f'<div style="padding:0 18px 10px;display:flex;align-items:center;gap:8px;font-weight:700;font-size:13px;color:#15803d">'
+               '<span style="width:11px;height:11px;border-radius:4px;background:#22c55e;display:inline-block"></span>Horas libres · viernes 28</div>'
+               f'<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;padding:0 16px">{cells}</div>')
+    return public_shell(content, 'Continuar')
+
+def screen_confirm():
+    rows = ''.join(f'<div style="display:flex;justify-content:space-between;padding:9px 0;border-top:1px solid {LN};font-size:14px">'
+                   f'<span style="color:{MU};font-weight:600">{k}</span><b style="color:{TX}">{v}</b></div>'
+                   for k, v in [('Servicio', 'Uñas acrílicas'), ('Día y hora', 'Vie 28 · 2:00 p.m.'), ('Total', '1.000 CUP')])
+    content = ('<div style="display:flex;flex-direction:column;align-items:center;padding:46px 22px 0;text-align:center">'
+               f'<div class="check" style="width:110px;height:110px;box-shadow:0 18px 40px rgba(34,197,94,.35)">{CHECK.format(s=62)}</div>'
+               f'<div style="font-weight:900;font-size:29px;letter-spacing:-0.03em;margin-top:26px;color:{TX}">¡Reserva hecha! 🎉</div>'
+               f'<div style="font-weight:600;font-size:15px;color:{MU};margin-top:8px">Te esperamos en Daniela Nails</div>'
+               f'<div style="margin-top:24px;width:100%;border-radius:18px;background:#fff;border:1px solid {LN};padding:14px 16px 6px;text-align:left">'
+               f'<div style="font-weight:800;font-size:16px;color:{TX};padding-bottom:8px">Tu cita</div>{rows}</div>'
+               f'<div style="margin-top:14px;width:100%;height:50px;border-radius:16px;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px">Avisar por WhatsApp</div></div>')
+    return public_shell(content)
+
+def screen_who():
+    pros = [('Yanet', 'Peluquera', 'yanet'), ('Carlos', 'Barbero', 'carlos'), ('Daniela', 'Manicurista', 'daniela')]
+    rows = ''
+    for i, (n, r, f) in enumerate(pros):
+        ph = foto(f)
+        sel = i == 1
+        av = f'<div class="av" style="width:46px;height:46px;font-size:18px;{f"background-image:url({ph})" if ph else ""}">{"" if ph else n[0]}</div>'
+        rows += (f'<div style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:16px;margin-bottom:9px;background:#fff;'
+                 f'border:{"2px solid " + BR if sel else "1px solid " + LN}">{av}'
+                 f'<div style="flex:1"><div style="font-weight:800;font-size:16px;color:{TX}">{n}</div><div style="font-weight:600;font-size:12px;color:{MU}">{r}</div></div>'
+                 + (f'<div class="check" style="width:26px;height:26px;background:{BR}">{CHECK.format(s=16)}</div>' if sel else '') + '</div>')
+    rows += (f'<div style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:16px;background:#fff;border:1px solid {LN}">'
+             f'<div class="av" style="width:46px;height:46px;font-size:20px;background:#e2e8f0;color:{MU}">✦</div>'
+             f'<div><div style="font-weight:800;font-size:16px;color:{TX}">Cualquiera</div><div style="font-weight:600;font-size:12px;color:{MU}">Quien esté libre</div></div></div>')
+    content = (step_title('¿Con quién quieres tu cita?')
+               + f'<div style="padding:0 18px 12px;margin-top:-4px;font-weight:500;font-size:13px;color:{MU}">Elige a la persona que prefieras o deja que te atienda quien esté libre.</div>'
+               + f'<div style="padding:0 16px">{rows}</div>')
+    return public_shell(content, 'Continuar')
 
 # ───────────── Imágenes ─────────────
 def img1():
@@ -189,12 +360,12 @@ def img1():
     if ph:
         visual = (f'<div class="photo" style="left:0;top:0;right:0;bottom:0;background-image:url({ph});background-position:center 30%"></div>'
                   '<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,20,.92) 0%,rgba(11,11,20,.55) 32%,rgba(11,11,20,.05) 55%,rgba(11,11,20,.75) 100%)"></div>'
-                  + phone(screen_agenda(), 600, 560, 0.82, 6))
+                  + phone(screen_hoy(), 600, 560, 0.82, 6))
     else:
-        visual = (phone(screen_agenda(), 340, 480, 0.9, -4)
+        visual = (phone(screen_hoy(), 340, 480, 0.9, -4)
                   + '<div class="card" style="position:absolute;left:70px;top:820px;width:330px;padding:22px 24px;display:flex;gap:14px;align-items:center;transform:rotate(-3deg);z-index:4">'
                   f'<div class="check" style="width:48px;height:48px;flex:none">{CHECK.format(s=26)}</div>'
-                  '<div><div style="font-weight:800;font-size:20px;color:#0b0b14">Nueva reserva</div><div style="font-weight:600;font-size:16px;color:#6b6876">Arianna · 17:00</div></div></div>'
+                  '<div><div style="font-weight:800;font-size:20px;color:#0b0b14">Nueva reserva</div><div style="font-weight:600;font-size:16px;color:#6b6876">Arianna · 4:00 p.m.</div></div></div>'
                   '<div class="card" style="position:absolute;left:760px;top:640px;width:250px;padding:22px 24px;transform:rotate(4deg);z-index:4">'
                   '<div class="lbl">Hoy</div><div style="font-weight:900;font-size:54px;letter-spacing:-0.04em;color:#0b0b14;line-height:1.1">6 <span style="font-size:24px;font-weight:700;color:#6b6876">citas</span></div>'
                   '<div style="font-weight:700;font-size:15px;color:#16a34a">Agenda llena ✓</div></div>')
@@ -285,7 +456,7 @@ def img5():
         x = 560 + (i % 2) * 250 if i < 2 else 685
         y = 470 if i < 2 else 860
         ph = foto(f)
-        minis += phone(screen_agenda(n, items, f'{r} · 3 citas hoy'), x, y, W, [-4, 4, 0][i])
+        minis += phone(screen_agenda_dia(n, f'{r}', [(h, c, sv) for h, c, sv, _, _ in items], ['2.400', '1.800', '2.100'][i]), x, y, W, [-4, 4, 0][i])
         minis += (f'<div style="position:absolute;left:{x + 40}px;top:{y - 30}px;display:flex;align-items:center;gap:10px;z-index:4;background:#fff;border-radius:999px;padding:6px 16px 6px 6px;box-shadow:0 10px 30px rgba(0,0,0,.3)">'
                   f'<div class="av" style="width:44px;height:44px;font-size:18px;{f"background-image:url({ph})" if ph else ""}">{"" if ph else n[0]}</div>'
                   f'<div style="color:#0b0b14"><div style="font-weight:800;font-size:17px;line-height:1.1">{n}</div><div style="font-weight:600;font-size:12px;color:#8a8794">{r}</div></div></div>')
