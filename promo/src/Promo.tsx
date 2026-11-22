@@ -7,14 +7,14 @@ import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
 import '@fontsource/jetbrains-mono/400.css';
 import '@fontsource/jetbrains-mono/700.css';
-import { AUDIO_FILE, CAPTIONS, FPS, SCENES, SFX } from './timing';
+import { AUDIO_FILE, CAPTIONS, FPS, SCENES, SFX, Word } from './timing';
 import { Bg, C, FONT_BODY, Grain, ramp, s2f } from './ui';
 import { Agenda, Cta, Hook, Pain, Solution } from './scenes';
 
 const T = 0.22; // duración de la transición (s)
 
 /** Envuelve una escena: entra desde abajo con desenfoque, sale hacia arriba */
-const SceneWrap: React.FC<{ from: number; to: number; light?: boolean; first?: boolean; last?: boolean; children: React.ReactNode }> = ({ from, to, light, first, last, children }) => {
+export const SceneWrap: React.FC<{ from: number; to: number; light?: boolean; first?: boolean; last?: boolean; children: React.ReactNode }> = ({ from, to, light, first, last, children }) => {
   const frame = useCurrentFrame(); // local a la Sequence
   const t = frame / FPS + from - (first ? 0 : T);
   const inP = first ? 1 : ramp(t, from - T, from + T * 0.6, 0, 1, Easing.out(Easing.cubic));
@@ -39,14 +39,15 @@ const TimeShift: React.FC<{ offset: number; children: React.ReactNode }> = ({ of
 
 const isLightAt = (t: number) => (t >= SCENES.pain[0] && t < SCENES.pain[1]) || (t >= SCENES.agenda[0] && t < SCENES.agenda[1]);
 
-const Captions: React.FC = () => {
+export const CaptionsFor: React.FC<{ caps: Word[][]; isLight: (t: number) => boolean }> = ({ caps, isLight }) => {
   const frame = useCurrentFrame();
   const t = frame / FPS;
   let idx = -1;
-  CAPTIONS.forEach((c, i) => { if (t >= c[0].t - 0.05) idx = i; });
+  caps.forEach((c, i) => { if (t >= c[0].t - 0.05) idx = i; });
   if (idx < 0) return null;
-  const chunk = CAPTIONS[idx];
-  const light = isLightAt(t);
+  const chunk = caps[idx];
+  const light = isLight(t);
+  if (isLight(chunk[0].t) !== light) return null; // no arrastrar subtítulos a otra escena
   return (
     <div style={{
       position: 'absolute', left: 96, right: 140, top: 1355, fontFamily: FONT_BODY, fontWeight: 600, fontSize: 52, lineHeight: 1.22,
@@ -83,7 +84,7 @@ export const Promo: React.FC = () => {
           </Sequence>
         );
       })}
-      <Captions />
+      <CaptionsFor caps={CAPTIONS} isLight={isLightAt} />
       <Grain />
       {AUDIO_FILE && <Audio src={staticFile(AUDIO_FILE)} />}
       {SFX.map((x, i) => (
